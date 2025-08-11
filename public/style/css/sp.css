@@ -1,0 +1,261 @@
+/*********** trang chi tiet san pham ********************/
+.info_product h1{float: left;width: 100%;font-size: 18px;font-weight: bold;font-family: arial;
+        color: #303030; text-transform: uppercase;margin-top: 0px;border-bottom: 1px dashed #cdcdcd;
+        padding-bottom: 5px;
+}
+a.cacloaisize {color: #000;margin-right: 0;font-size: 12px;position: relative;
+    background: #D2D2D2;padding: 4px 10px;border-radius: 7px;margin-left: 4px;
+}
+a.ycgoilai {color: #fff;margin-right: 0;font-size: 12px;position: relative;
+    background: #E73535;padding: 4px 10px;border-radius: 7px;margin-left: 4px;
+}
+a.ycgoilai:hover{color:#fff;text-decoration: underline;}
+
+.popup {
+    background-color: #fff;
+    border: 3px solid #fff;
+    display: inline-block;
+    left: 50%;
+    color: #666;
+    opacity: 0;
+    position: fixed;
+    text-align: justify;
+    top: 20%;
+    visibility: hidden;
+    z-index: 10;
+    /*height: 500px;*/
+    overflow: hidden;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: opacity .5s, top .5s;
+    -moz-transition: opacity .5s, top .5s;
+    -ms-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s;
+    transition: opacity .5s, top .5s;
+    min-width: 900px;
+}
+#howto {
+    height: 530px;
+}
+.overlay:target + .popup {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.popup p{line-height: 18px;}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 3;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.title-bar{padding: 13px 20px 10px;border: none;
+    border-bottom: 1px solid #F2F2F2;
+    background: #f9f9f9;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.title-bar p {width: auto;margin: 0;color: #E73535;font-weight: normal;font-size: 17px;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+.ui-dialog-content{overflow: scroll;padding-bottom: 10px;}
+
+.ty-control-group{float: left;width: 100%;}
+.ty-control-group label{float: left;font-size: 13px;font-weight: bold;color: #303030;
+        width: 100%;padding: 6px 0;   
+}
+.ty-control-group label span{color: red; padding-left: 5px;}
+.ty-control-group input[type=text]{height: 32px;padding: 4px 8px;font-size: 13px;
+        width: 500px;    
+}
+.ty-control-group textarea{padding: 4px 8px;font-size: 13px;
+        width: 500px;    
+}
+.ty-control-group input[type=submit]{padding: 5px 15px;font-size: 13px;margin-top: 5px;
+        color: #fff;background: #E73535; border: none;border-radius: 4px;
+}
+.ty-control-group input[type=submit]:hover{background: #b92828;
+}
+.ty-control-group p.khhuiu{font-size: 16px;color: red;padding-top: 20px;}
+
+p.ty-price {margin: 20px 0 10px 0; color: #303030;font-size: 17px;font-weight: bold;}
+p.ty-price span{font-weight: bold;color: #E73535; font-size: 30px;}
+
+
+
+input.cm-amount{
+    float: left;
+    width: 60px;
+    height: 33px;
+    text-align: center;
+ }
+input.cm-amount:hover{}
+/*.ty-value-changer__increase {
+     margin-bottom: 1px; position: absolute;right: 0px;
+}
+.ty-value-changer__decrease {
+    position: absolute;right: 0px;bottom: 0px;
+}*/
+div a.dathang{float: left;color: #fff;text-transform: uppercase;font-size: 14px;
+    background: #E73535;padding: 7px 40px; text-decoration: none;cursor: pointer;
+}
+div a.dathang:hover{background: #bd2d2d;}
+
+input.dathang{float: left;color: #fff;text-transform: uppercase;font-size: 20px;border: 1px solid #808080;
+    background: #034ec7;padding: 13px 35px; text-decoration: none;cursor: pointer;
+    margin-top: 20px;/*font-family: time news roman;*/font-weight: bold; width:100%;
+}
+input.dathang:hover{opacity: 0.8;}
+
+
+.ty-tabs__a{float: left;width:100%;margin-top: 20px;}
+.ty-tabs__a p{float: left;display: block;padding: 6px 15px;margin-bottom:0px;
+    text-decoration: none;background: #444;color: #fff;
+}
+
+.content_description textarea{float: left;width: 70%;padding: 7px;}
+
+.muahangtt{float: left;width: 100%;margin-top:20px;border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    padding-top: 13px;padding-bottom: 10px;}
+.muahangtt p.tt1{float: left;font-size: 18px;color: #303030;text-transform: uppercase;
+    line-height: 20px;padding-bottom:0px;
+}
+.muahangtt img{float: left;padding-left:10px;padding-right:10px;}
+.muahangtt p.tt2{float: left;color: red;font-size:18px;line-height: 20px;font-weight: bold;
+    padding-bottom:0px;
+}
+
+/******************** san pham cung chuyen muc ********************/
+#otherproduct{float: left;width: 100%;padding: 30px 0px;}
+.jCarouselLite{width:100%!important;float: left;margin-left:0%;padding-top: 15px;padding-left: 15px;
+        padding-right: 15px;}
+.jCarouselLite ul{width: 100%;float: left;}
+.jCarouselLite ul li{float: left;width: 308px;}
+.jCarouselLite ul li a img{float: left;width: 275px;height: 365px;
+    }
+.jCarouselLite ul li a{text-decoration: none;}
+.jCarouselLite ul li a h3{font-size: 16px;color: #303030;text-align: center;font-family: arial;
+    text-transform: capitalize;width: 275px;margin-top: 20px;float: left;
+}
+.jCarouselLite ul li a:hover h3{color: #E73535;transition: opacity 0.4s ease-in-out;
+    }
+.jCarouselLite ul li p.price{text-align: center;font-size: 18px; font-weight: bold;color: #303030;
+            font-family: minion pro;}
+
+.default button.prev, .default button.next{
+    background: transparent;border: medium none;cursor: pointer;position: absolute; top: 185px;
+    z-index:99999999; width: 33px;
+}
+
+.default{display: block;}
+.sanphamkhacomobile{display: none;}
+
+@media(min-width:993px){
+    .zoomWrapper{height: 600px!important;}
+}
+
+
+@media(max-width:1250px){
+    .default button.prev{left: 0px!important;}
+    .default button.next{right: 0px!important;}
+}
+@media(max-width:1200px){
+    .zoomContainer{display: none;}
+    #gallery_01{}
+    .zoomWrapper{max-width: 100%!important;height:auto;/*width: 100%!important;*/}
+    .zoomWrapper img{max-width: 94%!important;width: 98%!important;    
+                height: auto!important;}
+    .zoom-left{max-width: 94%!important;}
+
+    #gallery_01 a.active {width: 60px;}
+    #gallery_01 a.elevatezoom-gallery {width: 60px;}
+
+}
+
+@media(max-width:992px){
+    .zoomWrapper {height: 745px!important;}
+}
+
+@media(max-width:768px){
+    .zoomContainer{display: none;}
+    #gallery_01{/*width: 100%!important;clear: both;*/}
+    .zoomWrapper{max-width: 100%!important;height:760px!important;overflow: hidden;}
+    .zoomWrapper img{max-width: 94%!important;width: 98%!important;    
+                height: auto!important;}
+    .zoom-left{max-width: 94%!important;}
+
+    .info_product{clear: both;}
+    #gallery_01 a.active{width: 60px;}
+    #gallery_01 a.elevatezoom-gallery{width: 60px;}
+    .info_product h1{text-align: center;margin-top:10px;}
+}
+
+@media(max-width:700px){
+    .zoomWrapper {height: 685px!important;}
+}
+
+@media(max-width:600px){
+    .zoomWrapper {height: 570px!important;}
+}
+
+@media(max-width:550px){
+    .zoomWrapper {height: 540px!important;}
+}
+
+@media(max-width:500px){
+    .default{display: none;}
+    .sanphamkhacomobile{display: block;}
+    .default button.prevn,.default button.next{display: none!important;}
+    #gallery_01 a.active {width: 50px;}
+    #gallery_01 a.elevatezoom-gallery{width: 50px;}
+    a.cacloaisize, a.ycgoilai{padding: 4px 5px;font-size: 11px;}
+    
+    .zoomWrapper {height: 470px!important;}
+}
+
+@media(max-width:400px){
+    .zoomWrapper {height: 350px!important;}
+    
+    .zoomWrapper img{max-width:92%!important;}
+}
+
+@media(max-width:370px){
+    .zoomWrapper {height: 310px!important;}
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thietbinhatphat.com
+
+# Sitemaps
+Sitemap: https://thietbinhatphat.com/sitemap.xml
+

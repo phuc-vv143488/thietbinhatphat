@@ -1,0 +1,102 @@
+﻿$(document).ready(function () {    //if (getCookie("showpu") != "") {
+    //    $('#popupPage').hide();
+    //    $('#m-content').show();
+    //    $('#m-header').show();
+    //    $('#m-tabstrip').show();
+    //} else {
+    //    $('#popupPage').show();
+    //    $('#m-content').hide();
+    //    $('#m-header').hide();
+    //    $('#m-tabstrip').hide();
+    //}    $('#btnAppCl').on('click', function () {
+        setCookie("showpu", 1, 1);
+        $('#popupPage').hide();
+        $('#m-content').show();
+        $('#m-header').show();
+        $('#m-tabstrip').show();
+    });    $("img.pou_img").show().lazyload({ threshold: 200, effect: "fadeIn" });
+    $('#tabstrip-home').on('click', function () {
+        window.location.href = '/home';
+    });
+    $('#tabstrip-product-liked').on('click', function () {
+        window.location.href = '/san-pham-yeu-thich';
+    });
+    $('#tabstrip-order').on('click', function () {
+        window.location.href = '/checkout/cart';
+    });
+    $('#tabstrip-search').on('click', function () {
+        window.location.href = '/tim-kiem';
+    });
+    $('#tabstrip-acc').on('click', function () {
+        window.location.href = '/account';
+    });
+    $('.ohn-buttion').live('click', function () {
+        window.location.href = '/home';
+    });
+    $('.h-search-back').on('click', function () {
+        window.history.back();       
+    });
+    BzGlobal.ShowNumberProductInCart();
+    $("#m-quick-menu").niceScroll({ touchbehavior: false, cursorcolor: "#bcbcbc", cursoropacitymax: 0.7, cursorwidth: 4, cursorborder: "1px solid #a8a8a8", cursorborderradius: "8px", background: "#f1f1f1", autohidemode: "scroll" }); // MAC like scrollbar    
+    quickMenu.bindEventSwipeToShowMenu();
+    quickMenu.eventTouchScroll('m-quick-menu');
+
+    $('.show-menu').click(function () {
+        //touchScroll('m-quick-menu');
+        var isLeftZero = $('#m-quick-menu  div.quick-menu-content').hasClass('left-zero');
+        if (isLeftZero) {
+            //$('#m-quick-menu').swipe("disable");
+            $('#m-quick-menu > div.quick-menu-content').animate({ 'left': '-=70%' }, 100, function () {
+                $('#m-quick-menu  div.quick-menu-content').removeClass('left-zero');
+                $('#m-quick-menu').css({ 'display': 'none' });
+                //$('#m-quick-menu').swipe("enable");
+            });
+        }
+        else {
+            //$('#swipe-menu-area').swipe("disable");
+            $('#m-quick-menu').css({ 'display': 'block' });
+            $('#m-quick-menu div.quick-menu-bg').fadeIn(150);
+            $('#m-quick-menu > div.quick-menu-content').animate({ 'left': '+=70%' }, 150, function () {
+                $('#m-quick-menu  div.quick-menu-content').addClass('left-zero');
+                //$('#swipe-menu-area').swipe("enable");
+            });
+        }
+    });
+    //var vcIdhs = $('#hdscatId').val();
+    //if (vcIdhs != null) {
+    //    $('#m-quick-menu li a').each(function () {
+    //        var vcId = $(this).attr('id');
+    //        if (vcId == vcIdhs) {
+    //            var catObj = $(this).attr('data-nvsm');
+    //            var arrcName = catObj.split('-');
+    //            for (var i = 0; i < arrcName.length; i++) {
+    //                if (i == (arrcName.length - 1)) {
+    //                    $('.breadcrumb').append(' <span style="font-weight: bold;">' + arrcName[i] + '</span>');
+    //                } else {
+    //                    $('.breadcrumb').append(' <span class="breadcrumb-item">' + arrcName[i] + ' <span style="font-size: 0.8em; color: #9c9c9c">&gt;</span></span>');
+    //                }
+    //            }
+    //        }
+    //    });
+    //}
+    $('.sub1_li').on('click', function () {
+        if (!($(this).children('.mn_sub2').is(':visible'))) {
+            $('.mn_sub2').slideUp("fast");
+            $(this).children('.mn_sub2').slideDown("fast");
+        } else {
+            $('.mn_sub2').slideUp("fast");
+        }
+        if (!($(this).children('.ic_submn').hasClass('ic_s_cl'))) {
+            $('.ic_submn').removeClass('ic_s_cl');
+            $(this).children('.ic_submn').addClass('ic_s_cl');
+        } else {
+            $(this).children('.ic_submn').removeClass('ic_s_cl');
+        }
+    });
+    //----Banner Slider------
+    $("#home_banner").owlCarousel({
+        autoPlay: 3000,
+        singleItem: true,
+        navigation: false
+    });
+});

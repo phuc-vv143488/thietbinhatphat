@@ -1,0 +1,176 @@
+var quickMenu = {
+    init: function () {       
+        this.bindEventTabToShowHideMenu();        
+    },   
+    bindEventTabToShowHideMenu: function () {        
+         $('.show-menu').swipe({
+            tap: function () {
+                $('.show-menu').swipe("disable");
+                var isLeftZero = $('#m-quick-menu  div.quick-menu-content').hasClass('left-zero');
+                if (!isLeftZero) {                                        
+                    $('#m-quick-menu').css({ 'display': 'block' });       
+                    $('#m-quick-menu > div.quick-menu-content').animate({ 'left' : '+=70%' }, 100, function () {
+                        $('#m-quick-menu  div.quick-menu-content').addClass('left-zero');
+                        $('.show-menu').swipe("enable");                                                                                         
+                    });
+                } else {
+                    $('.quick-menu-bg').css({ 'height': '100%' });        
+                    $('#m-quick-menu > div.quick-menu-content').animate({ 'left' : '-=70%' }, 100, function () {
+                        $('#m-quick-menu  div.quick-menu-content').removeClass('left-zero');
+                        $('#m-quick-menu').css({ 'display': 'none' });
+                        $('.show-menu').swipe("enable");                                                
+                    });
+                }
+            },
+            threshold: 10
+        });   
+    },
+    menuMoveToLeft: function () {
+        var isLeftZero = $('#m-quick-menu  div.quick-menu-content').hasClass('left-zero');
+        if (isLeftZero) {
+            $('#m-order').css({ 'position': 'static' });
+            $('#m-quick-menu').swipe("disable");
+            $('#m-quick-menu div.quick-menu-bg').fadeOut(150);
+            $('#m-quick-menu > div.quick-menu-content').animate({ 'left': '-=70%' }, 100, function () {
+                $('#m-quick-menu  div.quick-menu-content').removeClass('left-zero');
+                $('#m-quick-menu').css({ 'display': 'none' });
+                $('#m-quick-menu').swipe("enable");
+            });
+        }
+    },
+    bindEventSwipeToShowMenu: function () {
+        $('#swipe-menu-area').swipe({
+            swipeRight: function (event, target) {                                
+                var isLeftZero = $('#m-quick-menu  div.quick-menu-content').hasClass('left-zero');
+                if (!isLeftZero) {                  
+                    $('#swipe-menu-area').swipe("disable");
+                    $('#m-quick-menu').css({ 'display': 'block' });
+                    $('#m-quick-menu div.quick-menu-bg').fadeIn(150);
+                    $('#m-quick-menu > div.quick-menu-content').animate({ 'left': '+=70%' }, 150, function () {
+                        $('#m-quick-menu  div.quick-menu-content').addClass('left-zero');
+                        $('#swipe-menu-area').swipe("enable");
+                    });
+                }
+            },
+            threshold: 0,
+            excludedElements: 'input'
+        });        
+        $('#m-quick-menu').swipe({
+            swipeLeft: function (event, target) {
+                quickMenu.commonMenuMoveLeft();
+            },
+            threshold: 30,
+            excludedElements: 'input'
+        });
+    },     
+    bindEventTapRootCate: function () {
+        $('.quick-menu-content ul li.sub > div.sub-q-cate').on('tap', function (event, target) {
+            event.stopPropagation();
+            $('.quick-menu-content ul li.sub > div.sub-q-cate').off('tap');
+            var hasChild = $(this).parent().children('ul');
+            if (hasChild.length <= 0) {
+                quickMenu.bindEventTapRootCate();
+                quickMenu.redirectToCategoryProduct($(this));
+            } else {
+                var $childIconAdd = $(this).children('div.icon-q-add');
+                var $childIconSub = $(this).children('div.icon-q-sub');
+                var $childUlTag = $(this).parent().children('ul');
+                if (!$childUlTag.is(':visible')) {
+                    $childIconAdd.hide();
+                    $childIconSub.show();
+                    $childUlTag.slideDown(250,function () {
+                       fixCss.FixHeightLayoutCrossAndroid(false);
+                    });
+                } else {
+                    $childIconSub.hide();
+                    $childIconAdd.show();
+                    $childUlTag.slideUp(250,function () {
+                        fixCss.FixHeightLayoutCrossAndroid(false);
+                    });
+                }
+                glBindTapQuickMenu = window.setInterval(function () { quickMenu.bindEventTapRootCate(); stopBindTapQuickMenu(); }, 500);
+            }
+        });
+    },
+    bindEventTabSubCate: function () {            
+        $('.quick-menu-content  ul  li.sub-sub').on('tap', function (event, target) {
+            var hasChild = $(this).children('icon-q-add');
+            if (hasChild.length <= 0) {
+                quickMenu.redirectToCategoryProduct($(this));
+            }
+        });
+    },    
+    firstLoading: 1,
+    tapLoadingContact: function () {
+        $('#m-quick-menu div.q-contact').on('tap', function () {
+            contact.loadDataAndShow();
+        });
+    },
+    tapLoadingPayment: function () {
+        $('#m-quick-menu div.q-payment').on('tap', function () {
+            payment.loadDataAndShow(true);
+        });
+    },
+    tapLoadingDelivery: function () {
+        $('#m-quick-menu div.q-delivery').on('tap', function () {
+            delivery.loadDataAndShow(true);
+        });
+    },
+    tapLoadingReturns: function () {
+        $('#m-quick-menu div.q-returns').on('tap', function () {
+            returns.loadDataAndShow(true);
+        });
+    },
+    redirectToCategoryProduct: function ($obj) {
+        common.redirectToProductList($obj);
+    },
+    tapToHideQuicMenu: function () {
+        $('#m-quick-menu div.quick-menu-bg').on('tap', function () {
+            quickMenu.commonMenuMoveLeft();
+        });
+    },
+    eventTouchScroll: function (id) {
+        var el=document.getElementById(id);
+        var scrollStartPosY = 0;
+        var scrollStartPosX = 0;
+
+        document.getElementById(id).addEventListener("touchstart", function (event) {
+            scrollStartPosY = this.scrollTop + event.touches[0].pageY;
+            scrollStartPosX = this.scrollLeft + event.touches[0].pageX;
+        },false);
+
+        document.getElementById(id).addEventListener("touchmove", function(event) {
+            // These if statements allow the full page to scroll (not just the div) if they are
+            // at the top of the div scroll or the bottom of the div scroll
+            // The -5 and +5 below are in case they are trying to scroll the page sideways
+            // but their finger moves a few pixels down or up.  The event.preventDefault() function
+            // will not be called in that case so that the whole page can scroll.
+            //console.log('ScrollTop: ' + this.scrollTop + ' scrollHeight: ' + this.scrollHeight + ' offsetHeight: ' + this.offsetHeight);
+            if ((this.scrollTop <= this.scrollHeight - this.offsetHeight &&
+				this.scrollTop + event.touches[0].pageY < scrollStartPosY - 5) ||
+				(this.scrollTop != 0 && this.scrollTop + event.touches[0].pageY > scrollStartPosY + 5))
+                event.preventDefault();	
+            if ((this.scrollLeft < this.scrollWidth-this.offsetWidth &&
+				this.scrollLeft + event.touches[0].pageX < scrollStartPosX-5) ||
+				(this.scrollLeft != 0 && this.scrollLeft + event.touches[0].pageX > scrollStartPosX+5))
+                event.preventDefault();
+		    
+            if (this.scrollTop == 0)
+                event.preventDefault();
+
+            this.scrollTop = scrollStartPosY - event.touches[0].pageY;
+            this.scrollLeft = scrollStartPosX - event.touches[0].pageX;
+        });
+    },
+    commonMenuMoveLeft: function () {
+        var isLeftZero = $('#m-quick-menu  div.quick-menu-content').hasClass('left-zero');
+        if (isLeftZero) {
+            $('#m-quick-menu').swipe("disable");
+            $('#m-quick-menu > div.quick-menu-content').animate({ 'left': '-=70%' }, 100, function () {
+                $('#m-quick-menu  div.quick-menu-content').removeClass('left-zero');
+                $('#m-quick-menu').css({ 'display': 'none' });
+                $('#m-quick-menu').swipe("enable");
+            });
+        }
+    }
+}
