@@ -1,94 +1,160 @@
-import React from 'react';
-import Link from 'next/link';
+const contactInfo = [
+  "CÔNG TY TNHH THIẾT BỊ CÔNG TRÌNH NHẤT PHÁT",
+  "",
+  "Địa chỉ: Số 18 - Đường Bãi Cát - Phường Lĩnh Nam - Quận Hoàng Mai - Hà Nội",
+  "Hotline: 0967 098 118",
+  "Tel: (024)66 577 177 - Fax: (024)66 577 177",
+  "Email: thietbinhatphat@gmail.com",
+];
 
-const Footer: React.FC = () => {
-  return (
-    <footer id="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3 col-sm-6 col-xs-12">
-            <div className="footer-widget">
-              <h3>CÔNG TY NHẤT PHÁT</h3>
-              <div className="footer-content">
-                <p><strong>Địa chỉ:</strong> Số 18 - Đường Bãi Cát - Lĩnh Nam - Hoàng Mai - Hà Nội</p>
-                <p><strong>Điện thoại:</strong> 0967.098.118 - 0962.098.118</p>
-                <p><strong>Email:</strong> thietbinhatphat@gmail.com</p>
-                <p><strong>Website:</strong> thietbinhatphat.com</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="col-md-3 col-sm-6 col-xs-12">
-            <div className="footer-widget">
-              <h3>SẢN PHẨM</h3>
-              <ul className="footer-links">
-                <li><Link href="/products/xe-nang-nguoi-tu-hanh">Xe Nâng Người Tự Hành</Link></li>
-                <li><Link href="/products/xe-nang-nguoi-gs">Xe nâng người GS</Link></li>
-                <li><Link href="/products/xe-nang-s-boom">Xe Nâng S boom</Link></li>
-                <li><Link href="/products/xe-nang-z-boom">Xe Nâng Z Boom</Link></li>
-                <li><Link href="/products/xe-nang-nguoi-jlg">Xe Nâng Người JLG</Link></li>
-                <li><Link href="/products/thang-nang-awp">Thang nâng AWP</Link></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="col-md-3 col-sm-6 col-xs-12">
-            <div className="footer-widget">
-              <h3>DỊCH VỤ</h3>
-              <ul className="footer-links">
-                <li><Link href="/services/cho-thue-xe-nang-nguoi">Cho thuê xe nâng người</Link></li>
-                <li><Link href="/services/sua-chua-xe-nang-nguoi">Sửa Chữa Xe Nâng Người</Link></li>
-                <li><Link href="/services/bao-duong-xe-nang-nguoi">Bảo dưỡng xe nâng người</Link></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="col-md-3 col-sm-6 col-xs-12">
-            <div className="footer-widget">
-              <h3>LIÊN KẾT</h3>
-              <ul className="footer-links">
-                <li><Link href="/about">Giới thiệu</Link></li>
-                <li><Link href="/news">Tin tức</Link></li>
-                <li><Link href="/contact">Liên hệ</Link></li>
-                <li><Link href="/sitemap.xml">Sitemap</Link></li>
-              </ul>
-              
-              <div className="social-links">
-                <h4>THEO DÕI CHÚNG TÔI</h4>
-                <div className="social-icons">
-                  <a href="https://www.facebook.com/nhat.phat.9674" target="_blank" rel="noopener noreferrer">
-                    <img src="https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/fa.png" alt="Facebook" />
-                  </a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/tw.png" alt="Twitter" />
-                  </a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/in.png" alt="LinkedIn" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="footer-bottom">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="copyright">
-                <p>&copy; 2024 Công ty Thiết Bị Nhất Phát. Tất cả quyền được bảo lưu.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Back to top button */}
-      <div className="btn-top" style={{display: 'none'}}>
-        <img src="/style/img/btn_top.png" alt="Back to top" />
-      </div>
-    </footer>
-  );
+const aboutLinks = [
+  {
+    text: "Bảo mật thông tin",
+    href: "http://garlic.com.vn/vn/ho-tro-khach-hang_bao-mat-thong-tin.html",
+  },
+  {
+    text: "Chỉnh sách bảo hành",
+    href: "http://garlic.com.vn/vn/ho-tro-khach-hang_chinh-sach-bao-hanh.html",
+  },
+  { text: "Liên hệ hợp tác", href: "#" },
+  { text: "Đối tác truyền thống", href: "#" },
+];
+
+const productLinks = [
+  { text: "Xe nâng Z Boom", href: "#" },
+  { text: "Xe nâng S boom", href: "#" },
+  { text: "Thang nâng AWP", href: "#" },
+  { text: "Xe nâng GS", href: "#" },
+  { text: "Máy công trình", href: "#" },
+];
+
+const policyLinks = [
+  { text: "Chính Sách Và Qui Định Chung", href: "#" },
+  { text: "Chính sách bảo mật thông tin cá nhân", href: "#" },
+  { text: "Chính sách đổi trả và bảo hành", href: "#" },
+  { text: "Chính sách vận chuyển", href: "#" },
+];
+
+const socialLinks = [
+  {
+    title: "Facebook",
+    href: "https://www.facebook.com/nhat.phat.9674",
+    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/fa.png",
+  },
+  {
+    title: "Twitter",
+    href: "#",
+    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/tw.png",
+  },
+  {
+    title: "In",
+    href: "#",
+    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/in.png",
+  },
+  {
+    title: "Print",
+    href: "#",
+    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/pr.png",
+  },
+];
+
+const paymentMethod = {
+  title: "Phương thức thanh toán",
+  href: "#",
+  img: "https://thietbinhatphat.com/public/media/media/files/thanh-toan/paypal.jpg",
 };
 
-export default Footer;
+export default function Footer() {
+  return (
+      <div id="footer">
+        <div className="container">
+          <div className="row">
+            {/* Thông tin liên hệ */}
+            <div className="col-md-4 col-sm-6 col-xs-12">
+              <p className="title2">Thông tin liên hệ</p>
+              <p className="line2"/>
+              <div className="clear"/>
+              <div className="diachi">
+                <h4>
+                  {contactInfo.map((line, i) => (
+                      <p key={i} style={{ margin: "0 0 10px" }}>
+                        {line}
+                      </p>
+                  ))}
+                </h4>
+              </div>
+            </div>
 
+            {/* Về chúng tôi */}
+            <FooterColumn title="Về chúng tôi" links={aboutLinks} />
+
+            {/* Sản phẩm cung cấp */}
+            <FooterColumn title="Sản phẩm cung cấp" links={productLinks} />
+
+            {/* Chính sách ưu đãi */}
+            <FooterColumn title="Chính sách ưu đãi" links={policyLinks} />
+          </div>
+
+          {/* Line */}
+          <div className="line3"/>
+
+          {/* Mạng xã hội */}
+          <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="row">
+              <ul className="share">
+                {socialLinks.map((item, i) => (
+                    <li key={i}>
+                      <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={item.href}
+                          title={item.title}
+                      >
+                        <img src={item.img} alt={item.title} title={item.title} />
+                      </a>
+                    </li>
+                ))}
+              </ul>
+              <p className="copyright">
+                Copyright ©2018 THIETBINHATPHAT. All rights reserved
+              </p>
+            </div>
+          </div>
+
+          {/* Phương thức thanh toán */}
+          <div className="right_bottom col-md-6 col-sm-6 col-xs-12">
+            <div className="row">
+              <a href={paymentMethod.href} title={paymentMethod.title}>
+                <img
+                    src={paymentMethod.img}
+                    alt={paymentMethod.title}
+                    title={paymentMethod.title}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  );
+}
+
+/* Component nhỏ cho các cột link */
+function FooterColumn({ title, links }) {
+  return (
+      <div className="col-md-3 col-sm-6 col-xs-12">
+        <p className="title2">{title}</p>
+        <p className="line2"/>
+        <div className="text_link">
+          <ul>
+            {links.map((item, i) => (
+                <li key={i}>
+                  <a href={item.href} title={item.text}>
+                    {item.text}
+                  </a>
+                </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+  );
+}

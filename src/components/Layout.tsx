@@ -1,7 +1,13 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import Banner from "./Banner";
+import Breadcrumb from "./Breadcrumb";
+import PartnerLogos from "./PartnerLogos";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,16 +24,33 @@ const Layout: React.FC<LayoutProps> = ({
   keywords = "xe nâng người, xe nâng người genie, xe nâng người Giá Rẻ, xe nâng người tại Hà Nội, xe nâng người tại Bắc Ninh, xe nâng người tại Hưng Yên, xe nâng người Nhập Khẩu, xe nâng người Chính Hãng, Giá Xe Nâng Người",
   ogImage = "/images/logo.png"
 }) => {
+
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <meta httpEquiv="Content-Language" content="vi" />
+        <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+        <meta http-equiv=X-UA-Compatible content="IE=edge"/>
+        <meta http-equiv="Content-Language" content="vi" />
         <meta name="Language" content="vi" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="keywords" content={keywords} />
+        <meta name="description" content={description} />
+
+
         {/* Open Graph tags */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -36,31 +59,62 @@ const Layout: React.FC<LayoutProps> = ({
         <meta property="og:site_name" content="Thiết Bị Nhất Phát" />
         
         {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
+        {/*<meta name="twitter:card" content="summary_large_image" />*/}
+        {/*<meta name="twitter:title" content={title} />*/}
+        {/*<meta name="twitter:description" content={description} />*/}
+        {/*<meta name="twitter:image" content={ogImage} />*/}
         
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/*<link rel="icon" href="/favicon.ico" />*/}
+        {/*<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />*/}
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="apple-touch-icon" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="apple-touch-icon" sizes="76x76" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="apple-touch-icon" sizes="120x120" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="apple-touch-icon" sizes="152x152" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="apple-touch-icon" sizes="180x180" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="icon" sizes="192x192" />
+        <link href="https://thietbinhatphat.com/public/media/images/logo/favicon.png" rel="icon" sizes="128x128" />
         
         {/* CSS Files */}
+        <link rel="stylesheet" href="/Content/css/common.css" />
+        <link rel="stylesheet" href="/style/engine1/slide.css" />
         <link rel="stylesheet" href="/style/css/bootstrap.css" />
         <link rel="stylesheet" href="/style/css/deki.css" />
-        <link rel="stylesheet" href="/style/engine1/slide.css" />
-        <link rel="stylesheet" href="/Content/css/common.css" />
+        <link rel="stylesheet" href="/style/css/sp.css" />
         <link rel="stylesheet" href="/style3/css/jquery.css" />
         <link rel="stylesheet" href="/magiczoomplus/magiczoomplus.css" />
       </Head>
       
-      <div className="min-h-screen flex flex-col">
+      <body>
         <Header />
-        <main className="flex-grow">
+        <Banner/>
+        <Breadcrumb/>
           {children}
-        </main>
+        <PartnerLogos/>
         <Footer />
-      </div>
+        {/* Nút về đầu trang */}
+        {showScrollTop && (
+            <div
+                id="bttop"
+                style={{
+                  position: "fixed",
+                  bottom: "30px",
+                  right: "30px",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  zIndex: 1000,
+                }}
+                onClick={scrollToTop}
+            >
+              <img src="/style/img/arrow-up.png" alt="về đầu trang" />
+            </div>
+        )}
+        <div class="call-mobile">
+          <!--<i class="fa fa-phone"></i>-->
+          <img src="style/img/phone_mobile.png" alt="phone" title="phone"/>
+            <a id="callnowbutton" href="tel:0967 098 118">0967 098 118</a>
+        </div>
+      </body>
     </>
   );
 };

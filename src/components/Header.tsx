@@ -13,6 +13,7 @@ const Header: React.FC = () => {
     if (searchQuery.trim()) {
       // Implement search functionality
       console.log('Search for:', searchQuery);
+      // window.location.href='https://thietbinhatphat.com/'+'tim-kiem/'+encodeURIComponent(searchQuery);
     }
   };
 
@@ -22,7 +23,7 @@ const Header: React.FC = () => {
       <div id="top">
         <div className="container">
           <div className="row">
-            <div className="hotline col-md-8 col-sm-8 col-xs-8">
+            <div className="hotline col-md-6 col-sm-6 col-xs-6">
               <ul className="sharehead">
                 <li>
                   <a target="_blank" href="https://www.facebook.com/nhat.phat.9674" title="Facebook">
@@ -47,7 +48,7 @@ const Header: React.FC = () => {
               </ul>
               <p><span>XE NÂNG NGƯỜI NHẤT PHÁT</span>.</p>
             </div>
-            <div className="lang col-md-4 col-sm-4 col-xs-12">
+            <div className="lang col-md-6 col-sm-6 col-xs-12">
               <p>
                 <img style={{marginRight: '10px', marginTop: '-2px'}} src="/style/img/email.png" alt="email" title="email" />
                 Email: thietbinhatphat@gmail.com
@@ -59,9 +60,29 @@ const Header: React.FC = () => {
 
       {/* Mobile Header */}
       <div className="header_mobile_an_desktop">
+        <div id="m-quick-menu" style={{display: 'none', position: 'fixed', overflow: 'scroll', top: '61px'}}>
+        <div className="quick-menu-content" id="q-menu-content" style={{left: '-70%'}}>
+          <ul>
+            <li><a href="gioi-thieu.html" className="qb_info" title="Giới Thiệu">Giới Thiệu</a></li><li className="mn_root"><a href="san-pham.html" title="Sản phẩm"><span className="mr_text">Sản phẩm</span></a>
+              <ul className="mn_sub1"><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-nguoi-tu-hanh.html" className="qb_info" title="Xe Nâng Người Tự Hành">Xe Nâng Người Tự Hành</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-nguoi-gs.html" className="qb_info" title="Xe nâng người GS">Xe nâng người GS</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-s-boom.html" className="qb_info" title="Xe Nâng S boom">Xe Nâng S boom</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-z-boom.html" className="qb_info" title="Xe Nâng Z Boom">Xe Nâng Z Boom</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-nguoi-jlg.html" className="qb_info" title="Xe Nâng Người JLG">Xe Nâng Người JLG</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="thang-nang-awp.html" className="qb_info" title="Thang nâng AWP">Thang nâng AWP</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="xe-nang-nguoi-dang-cat-keo.html" className="qb_info" title="Xe Nâng Người Dạng Cắt kéo">Xe Nâng Người Dạng Cắt kéo</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="may-cong-trinh.html" className="qb_info" title="Máy công trình">Máy công trình</a></li></ul>
+            </li>		<li className="mn_root"><a href="dich-vu.html" title="Dịch Vụ"><span className="mr_text">Dịch Vụ</span></a>
+              <ul className="mn_sub1"><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="cho-thue-xe-nang-nguoi.html" className="qb_info" title="Cho thuê xe nâng người">Cho thuê xe nâng người</a></li><li className="sub1_li"><a style={{paddingLeft: '40px'}} href="sua-chua-xe-nang-nguoi.html" className="qb_info" title="Sửa Chữa Xe Nâng Người">Sửa Chữa Xe Nâng Người</a></li></ul>
+            </li>		<li className="mn_root"><a href="tin-tuc.html" title="Tin Tức"><span className="mr_text">Tin Tức</span></a>
+              <ul className="mn_sub1" />
+            </li>		<li className="mn_root"><a href="xe-nang-nguoi-cu.html" title="Xe Nâng Người Cũ"><span className="mr_text">Xe Nâng Người Cũ</span></a>
+              <ul className="mn_sub1" />
+            </li>		<li className="mn_root"><a href="hinh-anh---du-an.html" title="Hình ảnh - Dự án"><span className="mr_text">Hình ảnh - Dự án</span></a>
+              <ul className="mn_sub1" />
+            </li>		<li><a href="videos.html" className="qb_info" title="Videos">Videos</a></li><li className="mn_root"><a href="lien-he.html" title="Liên Hệ"><span className="mr_text">Liên Hệ</span></a>
+              <ul className="mn_sub1" />
+            </li>		              </ul>
+        </div>
+        <div className="quick-menu-bg" style={{height: '100%'}} />
+        <div className="clear-both" />
+      </div>
         <div id="m-header" style={{position: 'fixed'}}>
           <div className="show-menu fl-l">
-            <div className="header-list-bg icon-quick-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div className="header-list-bg icon-quick-menu"> {/*onClick={() => setIsMenuOpen(!isMenuOpen)}*/}
             </div>
           </div>
           <div className="logo_mobile fl-l">
@@ -73,16 +94,18 @@ const Header: React.FC = () => {
         </div>
         
         <div className="search">
-          <form onSubmit={handleSearch}>
-            <input 
+          <form name="search" id="nsearch1" onSubmit={handleSearch}>
+            <input
+              id="key1"
               type="text"
+              size={24}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm Kiếm..."
               maxLength={100}
               autoComplete="off"
             />
-            <input type="submit" value="" />
+            <input id="searchbutton" type="submit" value="" />
           </form>
         </div>
       </div>
@@ -123,7 +146,7 @@ const Header: React.FC = () => {
                         <div className="row">
                           <div className="top_items">
                             <img src="https://thietbinhatphat.com/public/media/files/logo/add.png" alt="Address" title="Address" />
-                            <a href="https://www.google.com/maps" title="Address">
+                            <a href="https://www.google.com/maps/place/Việt+Á+Tower/@21.0303025,105.7842306,18.25z/data=!4m8!1m2!2m1!1zdMOyYSBuaMOgIFZp4buHdCDDgSwgc-G7kSA5IHBo4buRIER1eSBUw6JuLCAgcGjGsOG7nW5nIEThu4tjaCBW4buNbmcgSOG6rXUsIHF14bqtbiBD4bqndSBHaeG6pXksIEjDoCBO4buZaS4!3" title="Address">
                               <p>Đ/C: <span>Số 18 - Đường Bãi Cát - Lĩnh Nam - Hoàng Mai - Hà Nội</span></p>
                             </a>
                           </div>
@@ -133,8 +156,8 @@ const Header: React.FC = () => {
 
                     <div className="col-md-5 col-sm-5 col-xs-12">
                       <div className="search">
-                        <form onSubmit={handleSearch}>
-                          <input 
+                        <form name="search" id="nsearch" onSubmit={handleSearch}>
+                          <input id="key" size="24" name="keyword"
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
@@ -142,7 +165,7 @@ const Header: React.FC = () => {
                             maxLength={100}
                             autoComplete="off"
                           />
-                          <input type="submit" value="" />
+                          <input id="searchbutton" type="submit" value="" />
                         </form>
                       </div>
                     </div>
@@ -152,34 +175,31 @@ const Header: React.FC = () => {
             </div>
           </div>
         </header>
-
-        {/* Navigation Menu */}
-        <nav id="nav">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12 col-sm-12 col-xs-12">
-                <ul className="nav navbar-nav">
-                  <li><Link href="/">Trang Chủ</Link></li>
-                  <li><Link href="/about">Giới Thiệu</Link></li>
-                  <li className="dropdown">
-                    <a href="#" className="dropdown-toggle">Sản Phẩm</a>
-                    <ul className="dropdown-menu">
-                      <li><Link href="/products">Tất cả sản phẩm</Link></li>
-                      <li><Link href="/products/xe-nang-nguoi-tu-hanh">Xe Nâng Người Tự Hành</Link></li>
-                      <li><Link href="/products/xe-nang-nguoi-gs">Xe nâng người GS</Link></li>
-                      <li><Link href="/products/xe-nang-s-boom">Xe Nâng S boom</Link></li>
-                      <li><Link href="/products/xe-nang-z-boom">Xe Nâng Z Boom</Link></li>
-                    </ul>
-                  </li>
-                  <li><Link href="/services">Dịch Vụ</Link></li>
-                  <li><Link href="/news">Tin Tức</Link></li>
-                  <li><Link href="/contact">Liên Hệ</Link></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
       </div>
+      {/* Navigation Menu */}
+      <div id="menu">
+        <div className="menu">
+          <div className="container">
+            <ul className="nav1">
+              <li>
+                <a href="index.html" title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát">
+                  <h2>Trang chủ</h2>
+                </a>
+              </li>
+              <li>
+                <a href="gioi-thieu.html" title="Giới Thiệu"><h2>Giới Thiệu</h2></a> </li><li className="current">
+                <a href="san-pham.html" title="Sản phẩm"><h2>Sản phẩm</h2></a><ul><li><a href="xe-nang-nguoi-tu-hanh.html" title="Xe Nâng Người Tự Hành"><h2>Xe Nâng Người Tự Hành</h2></a></li><li><a href="xe-nang-nguoi-gs.html" title="Xe nâng Người GS"><h2>Xe nâng Người GS</h2></a></li><li><a href="xe-nang-s-boom.html" title="Xe Nâng Người S boom"><h2>Xe Nâng Người S boom</h2></a></li><li><a href="xe-nang-z-boom.html" title="Xe Nâng Người Z Boom"><h2>Xe Nâng Người Z Boom</h2></a></li><li><a href="xe-nang-nguoi-jlg.html" title="Xe Nâng Người JLG"><h2>Xe Nâng Người JLG</h2></a></li><li><a href="thang-nang-awp.html" title="Thang Nâng AWP"><h2>Thang Nâng AWP</h2></a></li><li><a href="xe-nang-nguoi-dang-cat-keo.html" title="Xe Nâng Người Dạng Cắt kéo"><h2>Xe Nâng Người Dạng Cắt kéo</h2></a></li><li><a href="may-cong-trinh.html" title="Máy công trình"><h2>Máy công trình</h2></a></li></ul> </li><li>
+                <a href="dich-vu.html" title="Dịch Vụ"><h2>Dịch Vụ</h2></a><ul><li><a href="cho-thue-xe-nang-nguoi.html" title="Cho thuê xe nâng người"><h2>Cho thuê xe nâng người</h2></a></li><li><a href="sua-chua-xe-nang-nguoi.html" title="Sửa Chữa Xe Nâng Người"><h2>Sửa Chữa Xe Nâng Người</h2></a></li></ul> </li><li>
+                <a href="tin-tuc.html" title="Tin Tức"><h2>Tin Tức</h2></a> </li><li>
+                <a href="xe-nang-nguoi-cu.html" title="Xe Nâng Người Cũ"><h2>Xe Nâng Người Cũ</h2></a> </li><li>
+                <a href="hinh-anh---du-an.html" title="Hình ảnh - Dự án"><h2>Hình ảnh - Dự án</h2></a> </li><li>
+                <a href="videos.html" title="Videos"><h2>Videos</h2></a> </li><li>
+                <a href="lien-he.html" title="Liên Hệ"><h2>Liên Hệ</h2></a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/*</div>*/}
     </>
   );
 };

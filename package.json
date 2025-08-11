@@ -16,6 +16,8 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

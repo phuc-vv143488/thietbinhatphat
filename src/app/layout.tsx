@@ -30,6 +30,7 @@ export default function RootLayout({
         
         {/* Original JavaScript Files */}
         <Script src="/style/js/jquery.min1.js" strategy="beforeInteractive" />
+        <Script src="/style/js/jquery.min.js" strategy="beforeInteractive" />
         <Script src="/style3/js/jquery.js" strategy="beforeInteractive" />
         <Script src="/style3/js/jquery_002.js" strategy="beforeInteractive" />
         <Script src="/style/js/lib.js" strategy="afterInteractive" />
