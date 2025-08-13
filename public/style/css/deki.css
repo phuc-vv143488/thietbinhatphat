@@ -552,7 +552,7 @@ a{text-decoration: none;}
 
 
 
-.menu ul.nav1 li:hover,.menu ul.nav1 li.current{background: #da251c; /*#da251c;*/}
+.menu ul.nav1 li:hover,.menu ul.nav1 li.current{background: #da251c; cursor: pointer /*#da251c;*/}
 
 
 
@@ -3242,7 +3242,7 @@ p.telshowroom{margin-bottom:25px;}
 
 
 
-.ty-color input[type=radio]:checked, .ty-color input[type=radio]:focus,{
+.ty-color input[type=radio]:checked, .ty-color input[type=radio]:focus{
 
 
 
@@ -3366,7 +3366,7 @@ p.telshowroom{margin-bottom:25px;}
 
 
 
-.ty-size input[type=radio]:checked, .ty-size input[type=radio]:focus,{
+.ty-size input[type=radio]:checked, .ty-size input[type=radio]:focus {
 
 
 
@@ -6604,6 +6604,7 @@ ul#tabsp li h2.hide1{float: left;font-size: 14px;color: #303030;
     margin-top: 15px !important;
     min-height: 40px;
     color: #000;
+    text-align: center;
 }
 .child-spsliderhoneimg{
 	    width: 100% !important;
@@ -6676,6 +6677,22 @@ transition: all .5s ease-in-out;}
     color: #ff0000;
     font-weight: bold;
 	
+}
+
+.product-swiper .product-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.product-swiper .child-spsliderhone {
+    width: 100%;
+    max-width: 100%;
+}
+
+.product-swiper .child-spsliderhoneimg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 

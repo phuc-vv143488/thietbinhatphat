@@ -1,6 +1,16 @@
 import React from 'react';
 
-const Advertisement = ({ ads }) => {
+interface AdItem {
+    href: string;
+    title: string;
+    img: string;
+}
+
+interface AdvertisementProps {
+    ads: AdItem[];
+}
+
+const Advertisement: React.FC<AdvertisementProps> = ({ ads }) => {
     return (
         <div className="adv_home">
             <ul>

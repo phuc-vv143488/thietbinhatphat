@@ -24,13 +24,13 @@ module.exports = {
     if (path === '/') {
       priority = 1.0;
       changefreq = 'daily';
-    } else if (path.includes('/products/')) {
+    } else if (path.includes('/san-pham/')) {
       priority = 0.8;
       changefreq = 'weekly';
-    } else if (path.includes('/news/')) {
+    } else if (path.includes('/tin-tuc/')) {
       priority = 0.6;
       changefreq = 'weekly';
-    } else if (path === '/about' || path === '/services' || path === '/contact') {
+    } else if (path === '/gioi-thieu' || path === '/dich-vu' || path === '/lien-he') {
       priority = 0.9;
       changefreq = 'monthly';
     }
@@ -64,14 +64,14 @@ module.exports = {
     ];
 
     const productPaths = productSlugs.map(slug => ({
-      loc: `/products/${slug}`,
+      loc: `/san-pham/${slug}`,
       changefreq: 'weekly',
       priority: 0.8,
       lastmod: new Date().toISOString(),
     }));
 
     const newsPaths = newsSlugs.map(slug => ({
-      loc: `/news/${slug}`,
+      loc: `/tin-tuc/${slug}`,
       changefreq: 'weekly',
       priority: 0.6,
       lastmod: new Date().toISOString(),

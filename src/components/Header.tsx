@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import NavigationMenu from "./NavigationMenu";
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
@@ -177,29 +176,7 @@ const Header: React.FC = () => {
         </header>
       </div>
       {/* Navigation Menu */}
-      <div id="menu">
-        <div className="menu">
-          <div className="container">
-            <ul className="nav1">
-              <li>
-                <a href="index.html" title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát">
-                  <h2>Trang chủ</h2>
-                </a>
-              </li>
-              <li>
-                <a href="gioi-thieu.html" title="Giới Thiệu"><h2>Giới Thiệu</h2></a> </li><li className="current">
-                <a href="san-pham.html" title="Sản phẩm"><h2>Sản phẩm</h2></a><ul><li><a href="xe-nang-nguoi-tu-hanh.html" title="Xe Nâng Người Tự Hành"><h2>Xe Nâng Người Tự Hành</h2></a></li><li><a href="xe-nang-nguoi-gs.html" title="Xe nâng Người GS"><h2>Xe nâng Người GS</h2></a></li><li><a href="xe-nang-s-boom.html" title="Xe Nâng Người S boom"><h2>Xe Nâng Người S boom</h2></a></li><li><a href="xe-nang-z-boom.html" title="Xe Nâng Người Z Boom"><h2>Xe Nâng Người Z Boom</h2></a></li><li><a href="xe-nang-nguoi-jlg.html" title="Xe Nâng Người JLG"><h2>Xe Nâng Người JLG</h2></a></li><li><a href="thang-nang-awp.html" title="Thang Nâng AWP"><h2>Thang Nâng AWP</h2></a></li><li><a href="xe-nang-nguoi-dang-cat-keo.html" title="Xe Nâng Người Dạng Cắt kéo"><h2>Xe Nâng Người Dạng Cắt kéo</h2></a></li><li><a href="may-cong-trinh.html" title="Máy công trình"><h2>Máy công trình</h2></a></li></ul> </li><li>
-                <a href="dich-vu.html" title="Dịch Vụ"><h2>Dịch Vụ</h2></a><ul><li><a href="cho-thue-xe-nang-nguoi.html" title="Cho thuê xe nâng người"><h2>Cho thuê xe nâng người</h2></a></li><li><a href="sua-chua-xe-nang-nguoi.html" title="Sửa Chữa Xe Nâng Người"><h2>Sửa Chữa Xe Nâng Người</h2></a></li></ul> </li><li>
-                <a href="tin-tuc.html" title="Tin Tức"><h2>Tin Tức</h2></a> </li><li>
-                <a href="xe-nang-nguoi-cu.html" title="Xe Nâng Người Cũ"><h2>Xe Nâng Người Cũ</h2></a> </li><li>
-                <a href="hinh-anh---du-an.html" title="Hình ảnh - Dự án"><h2>Hình ảnh - Dự án</h2></a> </li><li>
-                <a href="videos.html" title="Videos"><h2>Videos</h2></a> </li><li>
-                <a href="lien-he.html" title="Liên Hệ"><h2>Liên Hệ</h2></a> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      {/*</div>*/}
+      <NavigationMenu/>
     </>
   );
 };

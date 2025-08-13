@@ -10,7 +10,6 @@ const FacebookBox = ({ pageUrl }) => {
                     scrolling="no"
                     frameBorder="0"
                     style={{border: 'none', overflow: 'hidden', height: '225px', width: '100%', paddingBottom: '10px'}}
-                    allowTransparency
                 />
             </div>
         </div>

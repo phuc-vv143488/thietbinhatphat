@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 
@@ -160,20 +162,6 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="form-lienhe" style={{ width: 180, marginTop: 25 }}>
-                <label style={{ width: 90 }}>Mã bảo vệ</label>
-                <input
-                  className="form-control"
-                  id="code"
-                  type="text"
-                  name="code"
-                  value={form.code}
-                  onChange={handleChange}
-                  style={{ width: 80 }}
-                />
-                {/* Hidden checkcode input không cần dùng trong React */}
-              </div>
-
               <div className="form-lienhe">
                 <input type="submit" name="submit" value="Gửi" />
                 <input type="reset" name="reset" value="Nhập lại" />
@@ -244,24 +232,17 @@ export default function ContactPage() {
           font-style: italic;
         }
         input[type="submit"] {
-          background: #000;
-          color: #fff;
-          padding: 8px 10px;
-          width: 60px;
-          border: none;
-          border-radius: 3px;
-          cursor: pointer;
           margin-left: 90px;
           margin-right: 10px;
         }
-        input[type="reset"] {
-          background: #000;
-          color: #fff;
-          padding: 8px 10px;
-          width: 60px;
-          border: none;
-          border-radius: 3px;
-          cursor: pointer;
+        input[type="submit"], input[type="reset"] {
+          background: #000 !important;
+          color: #fff !important;
+          padding: 8px 10px !important;
+          width: 60px !important;
+          border: none !important;
+          border-radius: 3px !important;
+          cursor: pointer !important;
         }
         input[type="submit"]:hover,
         input[type="reset"]:hover {

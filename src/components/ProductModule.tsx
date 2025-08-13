@@ -1,15 +1,31 @@
-import React from "react";
-import Slider from "react-slick";
+"use client"; // cần vì Swiper chạy trên client
 
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+// Product Item
 const ProductItem = ({ href, title, imgSrc, price, iconSrc }) => (
     <div className="col-md-3 col-sm-3 col-xs-6">
         <div className="row">
             <div className="child-spsliderhone">
                 <div className="img">
                     <a href={href} title={title}>
-                        <img src={imgSrc} alt={title} className="child-spsliderhoneimg" />
+                        <img
+                            src={imgSrc}
+                            alt={title}
+                            className="child-spsliderhoneimg"
+                        />
                         {iconSrc && (
-                            <img className="icon" src={iconSrc} alt="sale off" title="sale off" />
+                            <img
+                                className="icon"
+                                src={iconSrc}
+                                alt="sale off"
+                                title="sale off"
+                            />
                         )}
                     </a>
                 </div>
@@ -18,7 +34,9 @@ const ProductItem = ({ href, title, imgSrc, price, iconSrc }) => (
                         <h3>{title}</h3>
                     </a>
                     <p className="giagoc">
-                        <span style={{ color: "#303030", fontWeight: "normal" }}>Giá:</span>{" "}
+            <span style={{ color: "#303030", fontWeight: "normal" }}>
+              Giá:
+            </span>{" "}
                         {price}
                     </p>
                 </div>
@@ -27,72 +45,7 @@ const ProductItem = ({ href, title, imgSrc, price, iconSrc }) => (
     </div>
 );
 
-// Custom Next Arrow component
-const NextArrow = ({ onClick }) => (
-    <button
-        className="next"
-        onClick={onClick}
-        style={{
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            position: "absolute",
-            top: "35%",
-            right: 0,
-            zIndex: 9,
-        }}
-    >
-        <img title="phải" alt="phải" src="style/img/next1.png" />
-    </button>
-);
-
-// Custom Prev Arrow component
-const PrevArrow = ({ onClick }) => (
-    <button
-        className="prev"
-        onClick={onClick}
-        style={{
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            position: "absolute",
-            top: "35%",
-            left: 0,
-            zIndex: 9,
-        }}
-    >
-        <img title="trái" alt="trái" src="style/img/prev1.png" />
-    </button>
-);
-
 const ProductModule = ({ title, link, products, isCarousel = false }) => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 1700,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        pauseOnHover: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: { slidesToShow: 3 }
-            },
-            {
-                breakpoint: 768,
-                settings: { slidesToShow: 2 }
-            },
-            {
-                breakpoint: 480,
-                settings: { slidesToShow: 1 }
-            }
-        ]
-    };
-
     return (
         <>
             <div className="col-md-12">
@@ -107,15 +60,50 @@ const ProductModule = ({ title, link, products, isCarousel = false }) => {
 
             <div className="clear"></div>
 
-            <div className="list-sp col-md-12 col-sm-12 col-xs-12" style={{ position: "relative" }}>
+            <div
+                className="list-sp col-md-12 col-sm-12 col-xs-12"
+                style={{ position: "relative" }}
+            >
                 {isCarousel ? (
-                    <Slider {...settings}>
+                    <Swiper
+                        modules={[Navigation, Autoplay]}
+                        navigation={{
+                            nextEl: ".next",
+                            prevEl: ".prev",
+                        }}
+                        autoplay={{ delay: 2500, disableOnInteraction: false }}
+                        speed={1700}
+                        loop={true}
+                        spaceBetween={20}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },
+                            480: { slidesPerView: 2 },
+                            768: { slidesPerView: 3 },
+                            992: { slidesPerView: 4 },
+                        }}
+                    >
                         {products.map((p, i) => (
-                            <div key={i}>
+                            <SwiperSlide key={i}>
                                 <ProductItem {...p} />
-                            </div>
+                            </SwiperSlide>
                         ))}
-                    </Slider>
+
+                        {/* Custom arrows */}
+                        <button className="prev" style={arrowStyle.left}>
+                            <img
+                                title="trái"
+                                alt="trái"
+                                src="style/img/prev1.png"
+                            />
+                        </button>
+                        <button className="next" style={arrowStyle.right}>
+                            <img
+                                title="phải"
+                                alt="phải"
+                                src="style/img/next1.png"
+                            />
+                        </button>
+                    </Swiper>
                 ) : (
                     <div className="list-homechannhe">
                         {products.map((p, i) => (
@@ -126,6 +114,27 @@ const ProductModule = ({ title, link, products, isCarousel = false }) => {
             </div>
         </>
     );
+};
+
+const arrowStyle = {
+    left: {
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        position: "absolute",
+        top: "35%",
+        left: 0,
+        zIndex: 9,
+    },
+    right: {
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        position: "absolute",
+        top: "35%",
+        right: 0,
+        zIndex: 9,
+    },
 };
 
 export default ProductModule;

@@ -1,12 +1,14 @@
-import React,  { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 import Banner from "./Banner";
 import Breadcrumb from "./Breadcrumb";
 import PartnerLogos from "./PartnerLogos";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import CallToAction from "./CallToAction";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 interface LayoutProps {
@@ -15,36 +17,24 @@ interface LayoutProps {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  backgroundUrl?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ 
-  children, 
+const Layout: React.FC<LayoutProps> = ({
+  children,
   title = "Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát",
   description = "Cung cấp các sản phẩm Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ cùng các dịch vụ cho thuê, sửa chữa xe nâng người tại Hà Nội, Hưng Yên, Bắc Ninh",
   keywords = "xe nâng người, xe nâng người genie, xe nâng người Giá Rẻ, xe nâng người tại Hà Nội, xe nâng người tại Bắc Ninh, xe nâng người tại Hưng Yên, xe nâng người Nhập Khẩu, xe nâng người Chính Hãng, Giá Xe Nâng Người",
-  ogImage = "/images/logo.png"
+  ogImage = "/images/logo.png",
+   backgroundUrl
 }) => {
-
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
-        <meta http-equiv=X-UA-Compatible content="IE=edge"/>
-        <meta http-equiv="Content-Language" content="vi" />
+        <meta httpEquiv="content-type" content="text/html" charSet="utf-8"/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+        <meta httpEquiv="Content-Language" content="vi" />
         <meta name="Language" content="vi" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         <meta name="keywords" content={keywords} />
@@ -84,37 +74,16 @@ const Layout: React.FC<LayoutProps> = ({
         <link rel="stylesheet" href="/style3/css/jquery.css" />
         <link rel="stylesheet" href="/magiczoomplus/magiczoomplus.css" />
       </Head>
-      
-      <body>
+
         <Header />
-        <Banner/>
+        <Banner backgroundUrl={backgroundUrl}/>
         <Breadcrumb/>
           {children}
         <PartnerLogos/>
         <Footer />
-        {/* Nút về đầu trang */}
-        {showScrollTop && (
-            <div
-                id="bttop"
-                style={{
-                  position: "fixed",
-                  bottom: "30px",
-                  right: "30px",
-                  cursor: "pointer",
-                  fontWeight: "bold",
-                  zIndex: 1000,
-                }}
-                onClick={scrollToTop}
-            >
-              <img src="/style/img/arrow-up.png" alt="về đầu trang" />
-            </div>
-        )}
-        <div class="call-mobile">
-          <!--<i class="fa fa-phone"></i>-->
-          <img src="style/img/phone_mobile.png" alt="phone" title="phone"/>
-            <a id="callnowbutton" href="tel:0967 098 118">0967 098 118</a>
-        </div>
-      </body>
+        <ScrollToTopButton/>
+        <CallToAction/>
+      {/*</body>*/}
     </>
   );
 };

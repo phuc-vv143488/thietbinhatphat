@@ -1,27 +1,5 @@
 import React from "react";
-
-const projects = [
-    {
-        href: "-cho-thue-xe-nang-nguoi-tai-cong-ty-pronics-kcn-dong-van-3_163.html",
-        title: "Cho thuê xe nâng người tại công ty Pronics kcn Đồng Văn 3",
-        imgSrc: "https://thietbinhatphat.com/public/images/pronics.jpg",
-    },
-    {
-        href: "-cho-thue-xe-nang-nguoi-tai-truong-quoc-te-singapore_153.html",
-        title: "Cho thuê xe nâng người tại trường quốc tế Singapore",
-        imgSrc: "https://thietbinhatphat.com/public/images/singapo-5.jpg",
-    },
-    {
-        href: "cho-thue-xe-nang-nguoi-tai-kcn-yen-phong-mo-rong_152.html",
-        title: "Cho thuê xe nâng người tại KCN Yên Phong mở rộng",
-        imgSrc: "https://thietbinhatphat.com/public/images/xe_na__ng_genie_z45_25_dc3.jpg",
-    },
-    {
-        href: "cho-thue-xe-nang-nguoi-tai-svd-my-dinh_151.html",
-        title: "Cho thuê xe nâng người tại SVĐ Mỹ Đình",
-        imgSrc: "https://thietbinhatphat.com/public/images/thang-nang-AWP-7.jpg",
-    },
-];
+import {projects} from "@/data/productData";
 
 const ProjectImages = () => (
     <div className="hinh-anh">

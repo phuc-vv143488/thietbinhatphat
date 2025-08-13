@@ -1,134 +1,157 @@
-const contactInfo = [
-  "CÔNG TY TNHH THIẾT BỊ CÔNG TRÌNH NHẤT PHÁT",
-  "",
-  "Địa chỉ: Số 18 - Đường Bãi Cát - Phường Lĩnh Nam - Quận Hoàng Mai - Hà Nội",
-  "Hotline: 0967 098 118",
-  "Tel: (024)66 577 177 - Fax: (024)66 577 177",
-  "Email: thietbinhatphat@gmail.com",
-];
+import React from "react";
 
 const aboutLinks = [
-  {
-    text: "Bảo mật thông tin",
-    href: "http://garlic.com.vn/vn/ho-tro-khach-hang_bao-mat-thong-tin.html",
-  },
-  {
-    text: "Chỉnh sách bảo hành",
-    href: "http://garlic.com.vn/vn/ho-tro-khach-hang_chinh-sach-bao-hanh.html",
-  },
-  { text: "Liên hệ hợp tác", href: "#" },
-  { text: "Đối tác truyền thống", href: "#" },
+  { href: "http://garlic.com.vn/vn/ho-tro-khach-hang_bao-mat-thong-tin.html", title: "Bảo mật thông tin" },
+  { href: "http://garlic.com.vn/vn/ho-tro-khach-hang_chinh-sach-bao-hanh.html", title: "Chỉnh sách bảo hành" },
+  { href: "", title: "Liên hệ hợp tác" },
+  { href: "", title: "Đối tác truyền thống" },
 ];
 
 const productLinks = [
-  { text: "Xe nâng Z Boom", href: "#" },
-  { text: "Xe nâng S boom", href: "#" },
-  { text: "Thang nâng AWP", href: "#" },
-  { text: "Xe nâng GS", href: "#" },
-  { text: "Máy công trình", href: "#" },
+  { href: "", title: "Xe nâng Z Boom" },
+  { href: "", title: "Xe nâng S boom" },
+  { href: "", title: "Thang nâng AWP" },
+  { href: "", title: "Xe nâng GS" },
+  { href: "#", title: "Máy công trình" },
 ];
 
 const policyLinks = [
-  { text: "Chính Sách Và Qui Định Chung", href: "#" },
-  { text: "Chính sách bảo mật thông tin cá nhân", href: "#" },
-  { text: "Chính sách đổi trả và bảo hành", href: "#" },
-  { text: "Chính sách vận chuyển", href: "#" },
+  { href: "", title: "Chính Sách Và Qui Định Chung" },
+  { href: "", title: "Chính sách bảo mật thông tin cá nhân" },
+  { href: "", title: "Chính sách đổi trả và bảo hành" },
+  { href: "", title: "Chính sách vận chuyển" },
 ];
 
 const socialLinks = [
   {
-    title: "Facebook",
     href: "https://www.facebook.com/nhat.phat.9674",
-    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/fa.png",
+    title: "Facebook",
+    imgSrc: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/fa.png",
+    alt: "Facebook",
   },
   {
-    title: "Twitter",
     href: "#",
-    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/tw.png",
+    title: "Tiwtter",
+    imgSrc: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/tw.png",
+    alt: "Tiwtter",
   },
   {
+    href: "#",
     title: "In",
-    href: "#",
-    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/in.png",
+    imgSrc: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/in.png",
+    alt: "In",
   },
   {
-    title: "Print",
     href: "#",
-    img: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/pr.png",
+    title: "Print",
+    imgSrc: "https://thietbinhatphat.com/public/media/media/files/mang-xa-hoi/pr.png",
+    alt: "Print",
   },
 ];
 
-const paymentMethod = {
-  title: "Phương thức thanh toán",
-  href: "#",
-  img: "https://thietbinhatphat.com/public/media/media/files/thanh-toan/paypal.jpg",
-};
-
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
       <div id="footer">
         <div className="container">
           <div className="row">
-            {/* Thông tin liên hệ */}
+            {/* Contact Info */}
             <div className="col-md-4 col-sm-6 col-xs-12">
               <p className="title2">Thông tin liên hệ</p>
-              <p className="line2"/>
-              <div className="clear"/>
+              <p className="line2"></p>
+              <div className="clear"></div>
               <div className="diachi">
-                <h4>
-                  {contactInfo.map((line, i) => (
-                      <p key={i} style={{ margin: "0 0 10px" }}>
-                        {line}
-                      </p>
-                  ))}
+                <h4 style={{ fontFamily: "Arial", fontSize: 14.4, marginBottom: "10px" }}>
+                  CÔNG TY TNHH THIẾT BỊ CÔNG TRÌNH NHẤT PHÁT
                 </h4>
+                <p style={{ fontFamily: "Arial", fontSize: 14.4, marginBottom: "10px" }}>
+                  Địa chỉ: Số 18 - Đường Bãi Cát - Phường Lĩnh Nam - Quận Hoàng Mai - Hà Nội
+                </p>
+                <p style={{ fontFamily: "Arial", fontSize: 14.4, marginBottom: "10px" }}>Hotline: 0967 098 118</p>
+                <p style={{ fontFamily: "Arial", fontSize: 14.4, marginBottom: "10px" }}>
+                  Tel: (024)66 577 177 - Fax: (024)66 577 177
+                </p>
+                <p style={{ fontFamily: "Arial", fontSize: 14.4, marginBottom: "10px" }}>
+                  Email: thietbinhatphat@gmail.com
+                </p>
               </div>
             </div>
 
-            {/* Về chúng tôi */}
-            <FooterColumn title="Về chúng tôi" links={aboutLinks} />
+            {/* About Us */}
+            <div className="hotro col-md-2 col-sm-6 col-xs-12">
+              <p className="title2">Về chúng tôi</p>
+              <p className="line2"></p>
+              <div className="text_link">
+                <ul>
+                  {aboutLinks.map(({ href, title }, idx) => (
+                      <li key={idx}>
+                        <a href={href} title={title}>
+                          {title}
+                        </a>
+                      </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-            {/* Sản phẩm cung cấp */}
-            <FooterColumn title="Sản phẩm cung cấp" links={productLinks} />
+            {/* Products */}
+            <div className="bst col-md-3 col-sm-6 col-xs-12">
+              <p className="title2">Sản phẩm cung cấp</p>
+              <p className="line2"></p>
+              <div className="text_link">
+                <ul>
+                  {productLinks.map(({ href, title }, idx) => (
+                      <li key={idx}>
+                        <a href={href} title={title}>
+                          {title}
+                        </a>
+                      </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-            {/* Chính sách ưu đãi */}
-            <FooterColumn title="Chính sách ưu đãi" links={policyLinks} />
+            {/* Policies */}
+            <div className="lhht col-md-3 col-sm-6 col-xs-12">
+              <p className="title2">Chính sách ưu đãi</p>
+              <p className="line2"></p>
+              <div className="text_link">
+                <ul>
+                  {policyLinks.map(({ href, title }, idx) => (
+                      <li key={idx}>
+                        <a href={href} title={title}>
+                          {title}
+                        </a>
+                      </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Line */}
-          <div className="line3"/>
+          <div className="line3"></div>
 
-          {/* Mạng xã hội */}
           <div className="col-md-6 col-sm-6 col-xs-12">
             <div className="row">
               <ul className="share">
-                {socialLinks.map((item, i) => (
-                    <li key={i}>
-                      <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={item.href}
-                          title={item.title}
-                      >
-                        <img src={item.img} alt={item.title} title={item.title} />
+                {socialLinks.map(({ href, title, imgSrc, alt }, idx) => (
+                    <li key={idx}>
+                      <a href={href} target="_blank" rel="noopener noreferrer" title={title}>
+                        <img src={imgSrc} alt={alt} title={title} />
                       </a>
                     </li>
                 ))}
               </ul>
-              <p className="copyright">
-                Copyright ©2018 THIETBINHATPHAT. All rights reserved
-              </p>
+              <p className="copyright">Copyright ©2018 THIETBINHATPHAT. All rights reserved</p>
             </div>
           </div>
 
-          {/* Phương thức thanh toán */}
           <div className="right_bottom col-md-6 col-sm-6 col-xs-12">
             <div className="row">
-              <a href={paymentMethod.href} title={paymentMethod.title}>
+              <a href="#" title="Phương thức thanh toán">
                 <img
-                    src={paymentMethod.img}
-                    alt={paymentMethod.title}
-                    title={paymentMethod.title}
+                    src="https://thietbinhatphat.com/public/media/media/files/thanh-toan/paypal.jpg"
+                    alt="Phương thức thanh toán"
+                    title="Phương thức thanh toán"
                 />
               </a>
             </div>
@@ -136,25 +159,6 @@ export default function Footer() {
         </div>
       </div>
   );
-}
+};
 
-/* Component nhỏ cho các cột link */
-function FooterColumn({ title, links }) {
-  return (
-      <div className="col-md-3 col-sm-6 col-xs-12">
-        <p className="title2">{title}</p>
-        <p className="line2"/>
-        <div className="text_link">
-          <ul>
-            {links.map((item, i) => (
-                <li key={i}>
-                  <a href={item.href} title={item.text}>
-                    {item.text}
-                  </a>
-                </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-  );
-}
+export default Footer;
