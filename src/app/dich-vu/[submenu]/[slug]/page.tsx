@@ -56,7 +56,7 @@ const { submenu, slug } = await params; // Phải await ở đây
 
 export default async function ProductDetailPage({params}: PageProps) {
     const { submenu, slug } = await params; // Cũng phải await khi dùng
-    const product = (dichVu.find((p) => p.submenu === submenu) || {})?.products.find(p => p.slug === slug);
+    const product = (dichVu.find((p) => p.submenu === submenu) || {})?.products?.find(p => p.slug === slug);
 
     if (!product) {
         return <p>Sản phẩm không tồn tại.</p>;

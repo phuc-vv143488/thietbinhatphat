@@ -1,10 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 # Host
 Host: https://baokhangan.com
 
 # Sitemaps
 Sitemap: https://baokhangan.com/sitemap.xml
-

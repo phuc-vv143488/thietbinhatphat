@@ -40,31 +40,21 @@ export default function AboutPage() {
             hiệu quả thi công cho mọi công trình.
           </p>
           <p>&nbsp;</p>
-          <p>
-            <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                CÔNG TY TNHH BẢO KHANG AN
-            </p>
+          <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
+              CÔNG TY TNHH BẢO KHANG AN
           </p>
-          <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
               Địa chỉ văn phòng: Nhà số 01B, Ngõ 2, Tổ 2, Đường Phạm Huy Quang, Phường Trần Lãm, Hưng Yên
             </p>
-          </p>
-          <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
                 Trụ sở chính: KCN Liên Hà Thái, xã Thái Thuỵ, tỉnh Hưng Yên
             </p>
-          </p>
-          <p> 
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
                 Điện thoại: 0356 389 883 / 0393 189 883
             </p>
-          </p>
-          <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
                 Email: baokhanganco.ltd8386@gmail.com
             </p>
-          </p>
           <div>&nbsp;</div>
         </div>
       </div>

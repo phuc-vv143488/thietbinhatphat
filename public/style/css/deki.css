@@ -236,7 +236,7 @@ a{text-decoration: none;}
 
 
 
-                background: url(../img/search_03.html) no-repeat 0 0; margin-top:39px;
+                /*background: url(../img/search_03.html) no-repeat 0 0; margin-top:39px;*/
 
 
 
@@ -2680,11 +2680,12 @@ ul.he-thong li p a.xemchitiet{position: absolute;right: 0px;bottom: 20px;width: 
 
 
 
-            background: url(../img/view-detail1.html);}
+            /*background: url(../img/view-detail1.html);*/
+}
 
 
 
-ul.he-thong li p a.xemchitiet:hover{background: url(../img/view-detail.html);}
+/*ul.he-thong li p a.xemchitiet:hover{background: url(../img/view-detail.html);}*/
 
 
 
@@ -2712,7 +2713,7 @@ ul.he-thong li p a.xemchitiet{position: absolute;right: 0px;bottom: 20px;width: 
 
 
 
-            background: url(../img/view-detail1.html);color: #fff; text-decoration: none;
+            /*background: url(../img/view-detail1.html);color: #fff; text-decoration: none;*/
 
 
 
@@ -2720,7 +2721,7 @@ ul.he-thong li p a.xemchitiet{position: absolute;right: 0px;bottom: 20px;width: 
 
 
 
-ul.he-thong li p a.xemchitiet:hover{background: url(../img/view-detail.html);background: #000;}
+/*ul.he-thong li p a.xemchitiet:hover{background: url(../img/view-detail.html);background: #000;}*/
 
 
 
@@ -3838,7 +3839,7 @@ ul#tabsp li h2.hide1{float: left;font-size: 14px;color: #303030;
 
 
 
-    background: url("../img/khoa.html") no-repeat scroll 0 0 transparent;
+    /*background: url("../img/khoa.html") no-repeat scroll 0 0 transparent;*/
 
 
 
@@ -5732,7 +5733,7 @@ ul#tabsp li h2.hide1{float: left;font-size: 14px;color: #303030;
 
 
 
-   background: url("../img/bg_li_cate_news.html")  no-repeat 10px 10px;
+   /*background: url("../img/bg_li_cate_news.html")  no-repeat 10px 10px;*/
 
 
 
@@ -6126,7 +6127,7 @@ ul#tabsp li h2.hide1{float: left;font-size: 14px;color: #303030;
 
 #m-quick-menu > div.quick-menu-content > ul > li > ul.mn_sub1 li.sub1_li img.ic_rmn { height:22px; position:absolute; top:5px; left:8px; }
 
-#m-quick-menu > div.quick-menu-content > ul > li > ul.mn_sub1 li.sub1_li span.ic_submn{padding: 0 !important; top: 12px; right: 7px; background-image: url('../img/baza_sprite.html');}
+#m-quick-menu > div.quick-menu-content > ul > li > ul.mn_sub1 li.sub1_li span.ic_submn{padding: 0 !important; top: 12px; right: 7px; /*background-image: url('../img/baza_sprite.html');*/}
 
 #m-quick-menu > div.quick-menu-content > ul > li > ul.mn_sub1 li.sub1_li span.ic_s_add{ position: absolute; width: 10px; height: 10px; background-position: -92px -6px;}
 

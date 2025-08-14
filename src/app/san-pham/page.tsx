@@ -8,17 +8,17 @@ import RightSide from "../../components/RightSide";
 import ProductList from "../../components/ProductList";
 
 
-export const pages = [
-  { label: "1", link: "#", active: true },
-  { label: "2", link: "san-pham_trang-2.html", active: false },
-  { label: "Next", link: "san-pham_trang-2.html", active: false },
-];
+// export const pages = [
+//   { label: "1", link: "#", active: true },
+//   { label: "2", link: "san-pham_trang-2.html", active: false },
+//   { label: "Next", link: "san-pham_trang-2.html", active: false },
+// ];
 
 function getAllItems(list) {
     const res = [];
     list.forEach(i => {
         if (i.products?.length > 0) {
-            res.concat(i.products.map(j => ({...j, slug: i.subMenu + j.slug})));
+            res.push(...i.products.map(j => ({...j, slug: i.subMenu + j.slug})));
         }
     })
     return res;
