@@ -19,11 +19,11 @@ export default function HomePage() {
           leftContent={<LeftSide/>}
           rightContent={<div className="right_home">
             <div className="hot_product_desktop">
-              {Object.values(productDatas).map(data => {
+              {productDatas.map(data => {
                 return data.products.length && (
                     <CategorySection
                         key={data.title}
-                        categoryLink={data.href}
+                        categoryLink={"san-pham/" + data.submenu}
                         categoryTitle={data.title}
                         products={data.products.slice(0, 4)}/>
                 )

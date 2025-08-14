@@ -5,10 +5,8 @@ import Advertisement from './Advertisement';
 import HotNews from './HotNews';
 import FacebookBox from './FacebookBox';
 import ProjectGallery from './ProjectGallery';
-import { menuData } from "@/data/menuData";
 
 const defaultData = {
-    categories: menuData,
     contacts: [
         { name: 'Kinh doanh 1', icon: 'https://thietbinhatphat.com/public/media/files/slide/zalo-icon.png', phone: '0967098118', email: 'thietbinhatphat@gmail.com' },
         { name: 'Kinh doanh 2', icon: 'https://thietbinhatphat.com/public/media/files/slide/zalo-icon.png', phone: '0962098118', email: 'thietbinhatphat@gmail.com' },
@@ -31,15 +29,15 @@ interface LeftSideProps {
     data?: typeof defaultData;
 }
 
-const LeftSide: React.FC<LeftSideProps> = ({ data = defaultData }) => {
+const LeftSide: React.FC<LeftSideProps> = () => {
     return (
         <>
-            <CategoryMenu categories={data.categories} />
-            <SupportOnline contacts={data.contacts} />
-            <Advertisement ads={data.ads} />
-            <HotNews title="Bài viết nổi bật" newsList={data.hotNews} />
-            <FacebookBox pageUrl={data.facebookUrl} />
-            <ProjectGallery title="Hình ảnh - Dự án" projects={data.projects} />
+            <CategoryMenu/>
+            <SupportOnline contacts={defaultData.contacts} />
+            <Advertisement ads={defaultData.ads} />
+            <HotNews title="Bài viết nổi bật" newsList={defaultData.hotNews} />
+            <FacebookBox pageUrl={defaultData.facebookUrl} />
+            <ProjectGallery title="Hình ảnh - Dự án" projects={defaultData.projects} />
         </>
     );
 };

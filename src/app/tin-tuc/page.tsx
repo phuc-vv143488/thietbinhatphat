@@ -1,17 +1,26 @@
 "use client";
 
 import React, { useState } from "react";
-import {newsItems} from "../../data/newsData";
+import {news} from "../../data/newsData";
+import {productDatas} from "../../data/productData";
+import MainLayout from "../../components/MainLayout";
+import LeftSide from "../../components/LeftSide";
+import RightSide from "../../components/RightSide";
+import Layout from "../../components/Layout";
+import NewsList from "../../components/NewsCard";
+import {menuData} from "../../data/menuData";
 
-const ITEMS_PER_PAGE = 10;
 
-const RightProduct: React.FC = () => {
+const ITEMS_PER_PAGE = 8;
+
+const RightNews: React.FC = () => {
+
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(newsItems.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
 
   // Lấy danh sách news của trang hiện tại
-  const currentItems = newsItems.slice(
+  const currentItems = news.slice(
       (currentPage - 1) * ITEMS_PER_PAGE,
       currentPage * ITEMS_PER_PAGE
   );
@@ -20,77 +29,27 @@ const RightProduct: React.FC = () => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
   };
-
-  return (
-      <div className="right_product">
-        <div className="title_news_home1">
-          <a href="#" title="Hình ảnh - Dự án">
-            <h3 style={{ marginTop: 0 }}>Hình ảnh - Dự án</h3>
-          </a>
-          <span></span>
-          <p></p>
-        </div>
-
-        <div className="list_mutinews">
-          <ul>
-            {currentItems.map(({ href, title, imgSrc, imgAlt, date, description }) => (
-                <li key={href}>
-                  <a href={href} title={title}>
-                    <img src={imgSrc} alt={imgAlt} title={title} />
-                  </a>
-                  <a href={href} title={title}>
-                    <h3>{title}</h3>
-                  </a>
-                  <span>({date})</span>
-                  <p>{description}</p>
-                </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Chỉ hiển thị phân trang khi > 10 items */}
-        {newsItems.length > ITEMS_PER_PAGE && (
-            <div className="page1">
-              <ul style={{ display: "flex", listStyle: "none", padding: 0 }}>
-                <li>
-                  <button
-                      onClick={() => handlePageChange(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      style={{ marginRight: 8 }}
-                  >
-                    Prev
-                  </button>
-                </li>
-
-                {/* Hiển thị các số trang */}
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <li key={page} style={{ marginRight: 8 }}>
-                      <button
-                          onClick={() => handlePageChange(page)}
-                          style={{
-                            fontWeight: currentPage === page ? "bold" : "normal",
-                          }}
-                      >
-                        {page}
-                      </button>
-                    </li>
-                ))}
-
-                <li>
-                  <button
-                      onClick={() => handlePageChange(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                  >
-                    Next
-                  </button>
-                </li>
-              </ul>
-            </div>
-        )}
-
-        <div className="detail_cate"></div>
-      </div>
-  );
+    return (
+        <Layout
+            title="Sản Phẩm Xe Nâng Người Genie - Thiết Bị Nhất Phát"
+            description="Danh sách đầy đủ các sản phẩm xe nâng người Genie: GS, S-boom, Z-boom, AWP, JLG. Chính hãng, giá tốt, chất lượng đảm bảo."
+            keywords="xe nâng người genie, xe nâng người gs, xe nâng s boom, xe nâng z boom, thang nâng awp, xe nâng jlg"
+        >
+            <MainLayout
+                leftContent={<LeftSide/>}
+                rightContent={<RightSide
+                    title="Tin tức"
+                    // products={news}
+                    // pages={null}
+                    // detailContent={null}
+                >
+                    <NewsList newsData={news}/>
+                </RightSide>
+                }
+            />
+            
+        </Layout>
+    );
 };
 
-export default RightProduct;
+export default RightNews;

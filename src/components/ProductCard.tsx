@@ -1,18 +1,21 @@
 // ProductCard.jsx
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation";
 
-const ProductCard = ({ link, title, image, alt, price, icon }) => {
+const ProductCard = ({ slug, title, image, alt, price, icon }) => {
+  const pathname = usePathname();
   return (
       <div className="col-md-3 col-sm-6 col-xs-6">
         <div className="child-sp">
           <div className="img">
-            <a href={link} title={title}>
+            <a href={pathname + "/" + slug} title={title}>
               <img src={image} alt={alt} />
               {icon && <img className="icon" src={icon} alt="sale off" title="sale off" />}
             </a>
           </div>
           <div className="brief">
-            <a href={link} title={title}>
+            <a href={pathname + "/" + slug} title={title}>
               <h3>{title}</h3>
             </a>
             <p className="giagoc">

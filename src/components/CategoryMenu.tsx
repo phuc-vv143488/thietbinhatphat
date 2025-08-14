@@ -14,7 +14,13 @@ export default function CategoryMenu() {
     // Ngược lại -> lọc nhóm cần thiết
     const titles = ["Sản phẩm", "Dịch Vụ"];
     const sidebarGroups = menuData.filter(item =>
-        titles.includes(item.title) && (pathname === "/" || item.subMenu)
+        {
+            if (pathname === "/") {
+                return titles.includes(item.title)
+            } else {
+                return isActive(item.href)
+            }
+        }
     );
 
 

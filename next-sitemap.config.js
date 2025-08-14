@@ -16,7 +16,7 @@ module.exports = {
       'https://thietbinhatphat.com/sitemap.xml'
     ]
   },
-  transform: async (config, path) => {
+  /*transform: async (config, path) => {
     // Custom priority and changefreq for different page types
     let priority = 0.7;
     let changefreq = 'weekly';
@@ -42,8 +42,8 @@ module.exports = {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: config.alternateRefs ?? [],
     };
-  },
-  additionalPaths: async (config) => {
+  },*/
+  /*additionalPaths: async (config) => {
     // Add dynamic product pages
     const productSlugs = [
       'xe-nang-nguoi-genie-gs-3268',
@@ -78,6 +78,6 @@ module.exports = {
     }));
 
     return [...productPaths, ...newsPaths];
-  }
+  }*/
 };
 
