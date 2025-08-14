@@ -11,6 +11,7 @@ interface ProductImageZoomProps {
 const ProductImageZoom: React.FC<ProductImageZoomProps> = ({ mainImage, thumbnails , title}) => {
     return (
         <div className="preview col-md-6 col-sm-6 col-xs-12">
+            {/*Todo: Cho css vaf js magiczoom vao day*/}
             {/*<Head>*/}
             {/*    <link*/}
             {/*        href="https://thietbinhatphat.com/magiczoomplus/magiczoomplus.css"*/}

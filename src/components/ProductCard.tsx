@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const ProductCard = ({ slug, title, image, alt, price, icon }) => {
   const pathname = usePathname();
+  console.log(pathname)
   return (
       <div className="col-md-3 col-sm-6 col-xs-6">
         <div className="child-sp">

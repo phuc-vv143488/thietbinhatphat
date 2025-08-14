@@ -3,51 +3,23 @@ import React from "react";
 const partnerLogos = [
     {
         href: "#",
-        title: "Đối tác 3",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-4(1).jpg",
-        alt: "Đối tác 3",
+        title: "CÔNG TY TNHH OHSUNG VINA THÁI BÌNH",
+        src: "/images/doi-tac/1.jpg",
     },
     {
         href: "#",
-        title: "Vingroup",
-        src: "https://thietbinhatphat.com/public/media/files/slide/dt-1.jpg",
-        alt: "Vingroup",
+        title: "CÔNG TY TNHH QUỐC TẾ NAM TÀI THÁI BÌNH",
+        src: "/images/doi-tac/2.jpg",
     },
     {
         href: "#",
-        title: "Đối tác",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-8.jpg",
-        alt: "Đối tác",
+        title: "CÔNG TY TNHH GREENWORKS (VIỆT NAM)",
+        src: "/images/doi-tac/3.jpg",
     },
     {
         href: "#",
-        title: "Đối tác",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-7.jpg",
-        alt: "Đối tác",
-    },
-    {
-        href: "#",
-        title: "Đối tác",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-1.jpg",
-        alt: "Đối tác",
-    },
-    {
-        href: "#",
-        title: "Đối tác 1",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-2(1).jpg",
-        alt: "Đối tác 1",
-    },
-    {
-        href: "#",
-        title: "Đối tác 2",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-3(1).jpg",
-        alt: "Đối tác 2",
-    },
-    {
-        href: "#",
-        title: "Đối tác 7",
-        src: "https://thietbinhatphat.com/public/media/files/doi-tac/dt-6(1).jpg",
-        alt: "Đối tác 7",
+        title: "CÔNG TY TNHH PEGAVISION VIỆT NAM",
+        src: "/images/doi-tac/4.jpg",
     },
 ];
 
@@ -57,9 +29,9 @@ export default function PartnerLogos() {
             <div className="row">
                 {/* Logo */}
                 <div id="logo" style={{ width: "100%", marginLeft: "0px" }}>
-                    <ul className="logo1">
+                    <ul className="logo1" style={{ marginLeft: "50%", transform: "translateX(-25%)" }}>
                         {partnerLogos.map((logo, index) => (
-                            <li key={index}>
+                            <li key={index} style={{height: "90px", textAlign: "center"}}>
                                 <a
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -68,8 +40,9 @@ export default function PartnerLogos() {
                                 >
                                     <img
                                         src={logo.src}
-                                        alt={logo.alt}
+                                        alt={logo.title}
                                         title={logo.title}
+                                        style={{height: "100%", objectFit: "cover"}}
                                     />
                                 </a>
                             </li>

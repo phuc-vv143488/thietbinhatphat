@@ -22,7 +22,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({
   children,
-  title = "Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát",
+  title = "Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An",
   description = "Cung cấp các sản phẩm Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ cùng các dịch vụ cho thuê, sửa chữa xe nâng người tại Hà Nội, Hưng Yên, Bắc Ninh",
   keywords = "xe nâng người, xe nâng người genie, xe nâng người Giá Rẻ, xe nâng người tại Hà Nội, xe nâng người tại Bắc Ninh, xe nâng người tại Hưng Yên, xe nâng người Nhập Khẩu, xe nâng người Chính Hãng, Giá Xe Nâng Người",
   ogImage = "/images/logo.png",
@@ -46,7 +46,7 @@ const Layout: React.FC<LayoutProps> = ({
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Thiết Bị Nhất Phát" />
+        <meta property="og:site_name" content="Thiết Bị Bảo Khang An" />
         
         {/* Twitter Card tags */}
         {/*<meta name="twitter:card" content="summary_large_image" />*/}

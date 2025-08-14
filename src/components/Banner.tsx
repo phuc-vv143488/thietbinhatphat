@@ -11,7 +11,8 @@ const Banner = ({ backgroundUrl }) => {
         textAlign: 'center',
         textTransform: 'uppercase',
         width: '100%',
-        float: 'left'
+        float: 'left',
+        // height: "700px"
     };
 
     return (

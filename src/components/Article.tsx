@@ -19,7 +19,7 @@ export default function Article(props) : ArticleProps {
                     {/* Đoạn script chia sẻ mạng xã hội có thể được xử lý riêng nếu cần */}
                     <a href="#">
                         <img
-                            src="https://s7.addthis.com/static/btn/lg-share-en.gif"
+                            src="https://www.etan.org/etan_files/lg-share-en.gif"
                             width="125"
                             height="16"
                             alt="Bookmark and Share"

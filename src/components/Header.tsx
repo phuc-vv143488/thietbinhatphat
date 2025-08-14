@@ -45,12 +45,12 @@ const Header: React.FC = () => {
                   </a>
                 </li>
               </ul>
-              <p><span>XE NÂNG NGƯỜI NHẤT PHÁT</span>.</p>
+              <p><span>CÔNG TY TNHH BẢO KHANG AN</span>.</p>
             </div>
             <div className="lang col-md-6 col-sm-6 col-xs-12">
               <p>
                 <img style={{marginRight: '10px', marginTop: '-2px'}} src="/style/img/email.png" alt="email" title="email" />
-                Email: thietbinhatphat@gmail.com
+                Email: baokhanganco.ltd8386@gmail.com
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           </div>
           <div className="logo_mobile fl-l">
             <Link href="/" title="Trang chủ">
-              <img src="https://thietbinhatphat.com/public/images/Logo/Logo.png" title="Logo" alt="Logo" />
+              <img src="/images/logo/logo.jpg" title="Logo" alt="Logo" />
             </Link>
           </div>
           <div className="clear-both"></div>
@@ -117,8 +117,8 @@ const Header: React.FC = () => {
               <div className="col-md-3 col-sm-3 col-xs-12">
                 <div className="row">
                   <div className="navbar-header">
-                    <Link className="navbar-brand" href="/" title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát">
-                      <img src="https://thietbinhatphat.com/public/images/Logo/Logo.png" alt="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát"/>
+                    <Link className="navbar-brand" href="/" title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An">
+                      <img src="/images/logo/logo.jpg" alt="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An"/>
                     </Link>
                     <h1 style={{display: 'none'}}>Xe Nâng Người</h1>
                   </div>
@@ -133,9 +133,9 @@ const Header: React.FC = () => {
                         <div className="row">
                           <div className="top_items">
                             <img src="https://thietbinhatphat.com/public/media/files/logo/tel.png" alt="Hotline" title="Hotline" />
-                            <a href="tel:0967098118" title="Hotline">
+                            <a href="tel:0356389883" title="Hotline">
                               <p>HỖ TRỢ GỌI NGAY</p>
-                              <p><span>0967098118 - 0962098118</span></p>
+                              <p><span>0356 389 883 - 0393 189 883</span></p>
                             </a>
                           </div>
                         </div>
@@ -146,7 +146,7 @@ const Header: React.FC = () => {
                           <div className="top_items">
                             <img src="https://thietbinhatphat.com/public/media/files/logo/add.png" alt="Address" title="Address" />
                             <a href="https://www.google.com/maps/place/Việt+Á+Tower/@21.0303025,105.7842306,18.25z/data=!4m8!1m2!2m1!1zdMOyYSBuaMOgIFZp4buHdCDDgSwgc-G7kSA5IHBo4buRIER1eSBUw6JuLCAgcGjGsOG7nW5nIEThu4tjaCBW4buNbmcgSOG6rXUsIHF14bqtbiBD4bqndSBHaeG6pXksIEjDoCBO4buZaS4!3" title="Address">
-                              <p>Đ/C: <span>Số 18 - Đường Bãi Cát - Lĩnh Nam - Hoàng Mai - Hà Nội</span></p>
+                              <p>Đ/C: <span>KCN Liên Hà Thái, xã Thái Thuỵ, tỉnh Hưng Yên</span></p>
                             </a>
                           </div>
                         </div>

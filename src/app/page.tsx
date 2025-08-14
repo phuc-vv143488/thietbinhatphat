@@ -11,9 +11,9 @@ export default function HomePage() {
 
   return (
     <Layout
-      title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty Nhất Phát"
+      title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An"
       description="Cung cấp các sản phẩm Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ cùng các dịch vụ cho thuê, sửa chữa xe nâng người tại Hà Nội, Hưng Yên, Bắc Ninh"
-      backgroundUrl="https://thietbinhatphat.com/public/files/Banner-slide/xe-nang-nguoi-1.jpg"
+      backgroundUrl="/images/banner/main.png"
     >
       <MainLayout
           leftContent={<LeftSide/>}

@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://thietbinhatphat.com
+Host: https://baokhangan.com
 
 # Sitemaps
-Sitemap: https://thietbinhatphat.com/sitemap.xml
+Sitemap: https://baokhangan.com/sitemap.xml
 

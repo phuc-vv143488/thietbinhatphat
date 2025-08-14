@@ -4,9 +4,10 @@ import Layout from '@/components/Layout';
 export default function AboutPage() {
   return (
     <Layout
-      title="Giới Thiệu - Công Ty Thiết Bị Nhất Phát"
-      description="Công ty Thiết Bị Nhất Phát - Đơn vị hàng đầu cung cấp xe nâng người Genie chính hãng tại Việt Nam. Với nhiều năm kinh nghiệm trong lĩnh vực thiết bị nâng hạ."
-      keywords="giới thiệu công ty, thiết bị nhất phát, xe nâng người genie, lịch sử công ty"
+      title="Giới Thiệu - Công Ty TNHH Bảo Khang An"
+      description="Công Ty TNHH Bảo Khang An - Đơn vị hàng đầu cung cấp xe nâng người Genie chính hãng tại Việt Nam. Với nhiều năm kinh nghiệm trong lĩnh vực thiết bị nâng hạ."
+      keywords="giới thiệu công ty, thiết bị Bảo Khang An, xe nâng người genie, lịch sử công ty"
+      backgroundUrl="/images/banner/gioi-thieu.jpg"
     >
       <div className="container">
       <div className="chitiettin">
@@ -15,57 +16,53 @@ export default function AboutPage() {
           <span></span>
         </div>
 
-        <p className="extract">Công ty TNHH Thiết bị công trình NHẤT PHÁT</p>
+        <p className="extract">Công ty TNHH Bảo Khang An</p>
         <p className="date">15:43 16/03/2018</p>
 
         <div className="chitiet1">
           <p>
-            &nbsp;Là đơn vị chuyên bán máy móc, thiết bị, phụ tùng máy khai
-            khoáng. Bán và cho thuê các loại máy như: máy móc thiết bị xây dựng,
-            thiết bị văn phòng. Cho thuê Container văn phòng, kho từ 20 feet – 40
-            feet, máy phát điện, máy nén khí, máy đầm, máy lu, máy phát hàn,
-            v.v… .Bán buôn ống nối, khớp nối và chi tiết lắp ghép khác. Vận tải
-            hành khách (trừ vận tải bằng xe buýt), hành hóa đường bộ trong nội,
-            ngoại thành. Xây dựng công trình đường sắt, đường bộ. Thiết kế, thi
-            công, lắp ráp biển báo giao thông và sơn đường…
+            &nbsp;Là đơn vị chuyên cung cấp dịch vụ cho thuê xe nâng người
+            chuyên dụng phục vụ thi công xây dựng, lắp đặt công nghiệp, bảo trì hệ thống và các công
+            việc trên cao khác.
           </p>
           <p>
-            Thi công lắp đặt phần cơ, điện, cho thuê xe cẩu - vận chuyển, xe nâng
-            người cho công trình xây dựng các nhà máy của Nhật Bản như: Canon,
-            Panasonic, Yamaha… .Từ một xí nghiệp nhỏ, bằng nỗ lực không ngừng của
-            đội ngũ cán bộ công nhân viên, NHẤT PHÁT đã vươn lên trở thành doanh
-            nghiệp có tiền lực mạnh, đủ để đáp ứng thiết bị, máy móc, nhân lực cho
-            các công trình của đối tác nước ngoài đặc biệt là đối tác Nhật Bản .
+            Với trụ sở chính tại Khu công nghiệp Liên Hà Thái, tỉnh Hưng Yên, và văn phòng điều hành tại
+            TP. Thái Bình, công ty luôn sẵn sàng đáp ứng nhanh chóng và hiệu quả cho mọi nhu cầu thuê
+            xe nâng người tại khu vực miền Bắc và trên toàn quốc.
           </p>
           <p>
-            Chúng tôi cam kết mang đến cho khách hàng sự hài lòng tối đa bằng các
-            sản phẩm chất lượng cao, đúng tiến độ với giá thành hợp lý nhất.
+            Chúng tôi sở hữu đội xe nâng người hiện đại, đầy đủ các dòng boom lift, scissor lift, với chiều
+            cao làm việc từ 8m đến 45m. Cùng với đó là đội ngũ kỹ thuật viên giàu kinh nghiệm, được đào
+            tạo bài bản, sẵn sàng hỗ trợ khách hàng trong suốt quá trình sử dụng thiết bị.
+          </p>
+          <p>
+            Bảo Khang An cam kết cung cấp giải pháp tối ưu – an toàn – tiết kiệm, góp phần nâng cao
+            hiệu quả thi công cho mọi công trình.
           </p>
           <p>&nbsp;</p>
           <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                CÔNG TY TNHH THIẾT BỊ CÔNG TRÌNH NHẤT PHÁT
+                CÔNG TY TNHH BẢO KHANG AN
             </p>
           </p>
           <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                Địa chỉ: Số 18 - Đường Bãi Cát - Phường Lĩnh Nam - Quận Hoàng Mai -
-                Hà Nội
+              Địa chỉ văn phòng: Nhà số 01B, Ngõ 2, Tổ 2, Đường Phạm Huy Quang, Phường Trần Lãm, Hưng Yên
+            </p>
+          </p>
+          <p>
+            <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
+                Trụ sở chính: KCN Liên Hà Thái, xã Thái Thuỵ, tỉnh Hưng Yên
             </p>
           </p>
           <p> 
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                Hotline: 0967 098 118
+                Điện thoại: 0356 389 883 / 0393 189 883
             </p>
           </p>
           <p>
             <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                Tel: (024)66 577 177 - Fax: (024)66 577 177&nbsp;
-            </p>
-          </p>
-          <p>
-            <p style={{ fontFamily: "Arial", fontSize: "14.4px" }}>
-                Email: thietbinhatphat@gmail.com
+                Email: baokhanganco.ltd8386@gmail.com
             </p>
           </p>
           <div>&nbsp;</div>

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://thietbinhatphat.com',
+  siteUrl: process.env.SITE_URL || 'https://baokhangan.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ['/admin/*', '/api/*'],
@@ -13,7 +13,7 @@ module.exports = {
       }
     ],
     additionalSitemaps: [
-      'https://thietbinhatphat.com/sitemap.xml'
+      'https://baokhangan.com/sitemap.xml'
     ]
   },
   /*transform: async (config, path) => {

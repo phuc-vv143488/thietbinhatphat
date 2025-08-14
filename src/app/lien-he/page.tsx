@@ -78,9 +78,10 @@ export default function ContactPage() {
   };
   return (
     <Layout
-      title="Liên Hệ - Thiết Bị Nhất Phát | Xe Nâng Người Genie"
-      description="Liên hệ với Thiết Bị Nhất Phát để được tư vấn và báo giá xe nâng người Genie. Hotline: 0967.098.118 - 0962.098.118. Địa chỉ: Hà Nội."
-      keywords="liên hệ thiết bị nhất phát, hotline xe nâng người, địa chỉ công ty xe nâng người, tư vấn xe nâng người"
+      title="Liên Hệ - Thiết Bị Bảo Khang An | Xe Nâng Người Genie"
+      description="Liên hệ với Thiết Bị Bảo Khang An để được tư vấn và báo giá xe nâng người Genie. Hotline: 0356389883 - 0356389883. Địa chỉ: Hà Nội."
+      keywords="liên hệ thiết bị Bảo Khang An, hotline xe nâng người, địa chỉ công ty xe nâng người, tư vấn xe nâng người"
+      backgroundUrl="/images/banner/gioi-thieu.jpg"
     >
       <div id="page3" style={{ marginTop: 50 }}>
       <div className="container">
@@ -172,14 +173,14 @@ export default function ContactPage() {
           </div>
 
           <div className="bando-lh col-md-8 col-sm-8 col-xs-12" style={{ marginTop: 50 }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14899.768855201954!2d105.88370382210996!3d20.99495337626519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aeb12127603f%3A0x2a55a986aff64bc!2zVGhhbmggVHLDrCwgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1538990131984"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.8946726873583!2d106.53560247752357!3d20.551490003995713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a09778c021917%3A0x3de7a2eda48d4d26!2zS2h1IGPDtG5nIG5naGnhu4dwIExpw6puIEjDoCBUaMOhaQ!5e0!3m2!1sen!2s!4v1755196309345!5m2!1sen!2s"
               width="100%"
               height="600"
               frameBorder={0}
               style={{ border: 0 }}
               allowFullScreen
               title="Google Maps"
+              referrerpolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>

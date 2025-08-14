@@ -31,17 +31,15 @@ const RightNews: React.FC = () => {
   };
     return (
         <Layout
-            title="Sản Phẩm Xe Nâng Người Genie - Thiết Bị Nhất Phát"
+            title="Sản Phẩm Xe Nâng Người Genie - Thiết Bị Bảo Khang An"
             description="Danh sách đầy đủ các sản phẩm xe nâng người Genie: GS, S-boom, Z-boom, AWP, JLG. Chính hãng, giá tốt, chất lượng đảm bảo."
             keywords="xe nâng người genie, xe nâng người gs, xe nâng s boom, xe nâng z boom, thang nâng awp, xe nâng jlg"
+            backgroundUrl="/images/banner/tin-tuc.jpg"
         >
             <MainLayout
                 leftContent={<LeftSide/>}
                 rightContent={<RightSide
                     title="Tin tức"
-                    // products={news}
-                    // pages={null}
-                    // detailContent={null}
                 >
                     <NewsList newsData={news}/>
                 </RightSide>
