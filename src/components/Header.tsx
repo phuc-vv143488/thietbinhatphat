@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           </div>
           <div className="logo_mobile fl-l">
             <Link href="/" title="Trang chủ">
-              <img src="/images/logo/logo.jpg" title="Logo" alt="Logo" />
+              <img src="/images/logo/logo2.png" title="Logo" alt="Logo" />
             </Link>
           </div>
           <div className="clear-both"></div>
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                 <div className="row">
                   <div className="navbar-header">
                     <Link className="navbar-brand" href="/" title="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An">
-                      <img src="/images/logo/logo.jpg" alt="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An"/>
+                      <img src="/images/logo/logo2.png" alt="Xe Nâng Người Genie Nhập Khẩu Chính Hãng Giá Rẻ - Công Ty TNHH Bảo Khang An"/>
                     </Link>
                     <h1 style={{display: 'none'}}>Xe Nâng Người</h1>
                   </div>
